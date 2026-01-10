@@ -1,70 +1,74 @@
-import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Quote, Pause, Play } from "lucide-react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Link } from "wouter";
 import { testimonials } from "@/content/siteContent";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 
+const VISIBLE_TESTIMONIALS = testimonials?.slice(0, 9) || [];
+
 export function TestimonialSection() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef(0);
+
+  const totalSlides = Math.ceil(VISIBLE_TESTIMONIALS.length / 3);
 
   const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % testimonials.length);
-  }, []);
+    setCurrent((prev) => (prev + 1) % totalSlides);
+  }, [totalSlides]);
 
-  const prev = () => {
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  const prev = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + totalSlides) % totalSlides);
+  }, [totalSlides]);
 
   useEffect(() => {
-    if (isPaused) return;
-    
-    const interval = setInterval(() => {
-      next();
-    }, 6000);
-
+    if (isPaused || VISIBLE_TESTIMONIALS.length === 0) return;
+    const interval = setInterval(next, 6000);
     return () => clearInterval(interval);
   }, [isPaused, next]);
 
-  const visibleTestimonials = [
-    testimonials[current],
-    testimonials[(current + 1) % testimonials.length],
-    testimonials[(current + 2) % testimonials.length],
-  ];
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev();
+    }
+  };
+
+  const getVisibleTestimonials = () => {
+    const start = current * 3;
+    return VISIBLE_TESTIMONIALS.slice(start, start + 3);
+  };
+
+  if (VISIBLE_TESTIMONIALS.length === 0) {
+    return null;
+  }
 
   return (
     <Section background="muted">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+            <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-2">
               What Our Clients Say
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Real stories from Dublin homeowners we've helped.
+            <p className="text-muted-foreground">
+              Real feedback from Dublin homeowners.
             </p>
           </div>
-          <div className="flex items-center gap-2" role="group" aria-label="Carousel controls">
-            <button
-              onClick={() => setIsPaused(!isPaused)}
-              className="p-2 rounded-full hover:bg-white transition-colors focus-ring"
-              aria-label={isPaused ? "Play carousel" : "Pause carousel"}
-              data-testid="testimonial-pause"
-            >
-              {isPaused ? (
-                <Play className="w-4 h-4 text-muted-foreground" />
-              ) : (
-                <Pause className="w-4 h-4 text-muted-foreground" />
-              )}
-            </button>
+          <div className="flex items-center gap-2">
             <Button
               variant="outline"
               size="icon"
               onClick={prev}
-              className="bg-white"
+              className="bg-white h-9 w-9"
               data-testid="testimonial-prev"
-              aria-label="Previous testimonial"
+              aria-label="Previous"
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
@@ -72,9 +76,9 @@ export function TestimonialSection() {
               variant="outline"
               size="icon"
               onClick={next}
-              className="bg-white"
+              className="bg-white h-9 w-9"
               data-testid="testimonial-next"
-              aria-label="Next testimonial"
+              aria-label="Next"
             >
               <ChevronRight className="w-4 h-4" />
             </Button>
@@ -82,29 +86,30 @@ export function TestimonialSection() {
         </div>
 
         <div
-          className="grid md:grid-cols-3 gap-6"
+          ref={containerRef}
+          className="grid md:grid-cols-3 gap-5"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
           role="region"
-          aria-label="Testimonials carousel"
-          aria-live="polite"
+          aria-label="Testimonials"
         >
-          {visibleTestimonials.map((testimonial, index) => (
+          {getVisibleTestimonials().map((testimonial, index) => (
             <article
               key={`${current}-${index}`}
-              className="bg-white rounded-xl p-6 card-shadow card-shadow-hover border border-border animate-fade-in"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              className="card-refined p-5 animate-fade-in"
             >
-              <Quote className="w-8 h-8 text-primary/20 mb-4" aria-hidden="true" />
-              <blockquote className="text-foreground leading-relaxed mb-6 min-h-[80px]">
+              <Quote className="w-6 h-6 text-primary/15 mb-3" aria-hidden="true" />
+              <blockquote className="text-foreground text-sm leading-relaxed mb-4 line-clamp-3">
                 "{testimonial.quote}"
               </blockquote>
-              <footer className="border-t border-border pt-4">
+              <footer className="border-t border-border pt-3">
                 <cite className="not-italic">
-                  <p className="font-semibold text-foreground">
+                  <p className="font-semibold text-sm text-foreground">
                     {testimonial.author}
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     {testimonial.location}
                   </p>
                 </cite>
@@ -113,18 +118,14 @@ export function TestimonialSection() {
           ))}
         </div>
 
-        <div className="flex justify-center gap-1.5 mt-8" role="tablist" aria-label="Testimonial navigation">
-          {testimonials.map((_, index) => (
+        <div className="flex justify-center gap-2 mt-8" role="tablist">
+          {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`w-2 h-2 rounded-full transition-all focus-ring ${
-                index === current
-                  ? "bg-primary w-6"
-                  : "bg-border hover:bg-muted-foreground"
-              }`}
+              className={`dot-indicator ${index === current ? 'active' : ''}`}
               data-testid={`testimonial-dot-${index}`}
-              aria-label={`Go to testimonial ${index + 1}`}
+              aria-label={`Page ${index + 1}`}
               aria-selected={index === current}
               role="tab"
             />
@@ -133,7 +134,7 @@ export function TestimonialSection() {
 
         <div className="text-center mt-8">
           <Link href="/contact">
-            <Button variant="outline" data-testid="testimonial-read-all">
+            <Button variant="outline" size="sm" className="text-sm">
               Read All Testimonials
             </Button>
           </Link>

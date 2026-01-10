@@ -1,0 +1,99 @@
+You are a Replit Agent working in this repo. Objective: make the site production-ready by fixing all currently-highlighted UI/UX issues, enforcing the agreed “Refined Craftsman” art direction, and eliminating runtime/import regressions.
+
+NON-NEGOTIABLE ACCEPTANCE CRITERIA (“DONE”)
+
+1. Above-the-fold: a premium “Journey starts here” funnel card is visible immediately, with clean hierarchy and no layout jank across breakpoints.
+2. Hero: centred, cinematic background; strong headline hierarchy; CTA buttons feel premium (size, spacing, hover, focus, active).
+3. Trust signals: visible immediately without looking like a “badge farm”. Keep them minimal and consistent.
+4. Testimonials: auto-advancing carousel with swipe support and tasteful controls; content is not an overwhelming wall of text.
+5. Logo: integrated correctly in header + footer with correct sizing and spacing; favicon present.
+6. No runtime errors, no broken imports/exports, no console errors.
+
+PRIMARY WORKSTREAMS
+
+A) Fix functional regressions / stability
+
+* Run the app and confirm there are zero runtime errors in console.
+* Search the codebase for any stale imports (e.g., FAQ importing `popularQuestions` or similar) and ensure exports are consistent.
+* Add a small “data contract” guard: if FAQ/testimonials arrays are empty/undefined, render a graceful fallback (no crash).
+
+B) Navigation + header polish (logo + spacing)
+
+* Place logo left of navigation. Ensure it links to Home.
+* Header spacing: balance logo, nav items, phone, and “Get a Quote” button. Avoid cramped right side.
+* Ensure mobile nav is clean (menu button, readable tap targets, no overflow).
+* Implement tasteful sticky header behavior (optional), but no aggressive shadows.
+
+C) Footer polish (logo + credibility line)
+
+* Include logo again in footer, smaller than header.
+* Add a short credibility line (e.g., “Family-run since 1995” / “30+ years experience”).
+* Keep footer clean: no clutter, consistent typography.
+
+D) Home page “Journey funnel” card improvements
+
+* Maintain padding/clearscape. No heavy drop shadows.
+* Cards should feel “alive”:
+
+  * Soft shadow (subtle)
+  * Slight scale/raise on hover (very subtle)
+  * Consistent typography hierarchy
+  * Star rating ONLY if it’s true and used consistently; otherwise remove.
+* Add progress indicator dots for any carousel/stepper sections:
+
+  * Dots are subtle, consistent, and have an active state.
+  * Active dot should also show subtle progress state.
+* Ensure the “Start Your Journey” link/button is clear and aligned with the funnel.
+
+E) Content hygiene (reduce walls of text)
+
+* Across pages, avoid massive text blocks.
+* For sections with long explanations: show 1–2 sentences + “Read more” / accordion expansion.
+* Keep 6–12 best testimonials in rotation. Do not dump dozens of testimonials on the page.
+* Ensure FAQ uses accordions (collapsed by default), with good spacing and readable line length.
+
+F) Typography + layout consistency
+
+* Enforce typography system:
+
+  * Headings: Playfair Display (or current chosen serif) with controlled weights
+  * Body: Inter (or current chosen sans) with consistent sizes/line heights
+* Standardize spacing scale (e.g., 4/8/12/16/24/32/48) and apply consistently.
+* Maintain “refined cards”: gentle borders, subtle shadows, rounded corners, no harsh outlines.
+* Ensure focus states are visible and consistent (accessibility).
+
+G) Interaction/animation taste rules
+
+* No heavy drop shadows.
+* Maintain padding/clearscape.
+* Keep animations minimal and purposeful:
+
+  * micro-transitions on hover
+  * carousel transitions
+  * avoid gimmicky motion
+* Ensure buttons and cards have consistent hover/active states.
+
+H) Assets: logo + favicon
+
+* If a logo asset exists in repo, use it (SVG preferred; PNG acceptable if crisp).
+* Add favicon:
+
+  * If available, wire it up correctly.
+  * If not, generate a simple mark based on the logo style and add it to public assets.
+* Confirm correct sizing and retina friendliness.
+
+DELIVERABLES
+
+1. Commit-ready code changes that pass the acceptance criteria above.
+2. A quick checklist in the console/log output describing what was changed and where (files touched), especially for:
+
+   * FAQ data/import/export stabilization
+   * Testimonials carousel changes (auto-advance + swipe + dot indicators)
+   * Header/footer logo integration
+   * Content trimming + accordion/read-more patterns
+
+EXECUTION NOTES
+
+* Prefer reusable components: Carousel with dots, Accordion/ReadMore, Card, Button variants.
+* Keep the brand palette consistent (warm off-white background, charcoal text, warm red/amber accents, soft borders).
+* After changes, run through desktop + mobile widths to confirm no layout breaks, no overflow, and no awkward line lengths.

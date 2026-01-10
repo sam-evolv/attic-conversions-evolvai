@@ -34,10 +34,11 @@
   --color-chart-5: hsl(var(--chart-5));
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
 }
 
 :root {
-  --background: 0 0% 100%;
+  --background: 30 20% 99%;
   --foreground: 220 13% 9%;
   
   --card: 0 0% 100%;
@@ -52,10 +53,10 @@
   --secondary: 220 13% 9%;
   --secondary-foreground: 0 0% 100%;
   
-  --muted: 210 20% 98%;
+  --muted: 30 10% 96%;
   --muted-foreground: 220 9% 46%;
   
-  --accent: 210 20% 98%;
+  --accent: 30 10% 96%;
   --accent-foreground: 220 13% 9%;
   
   --destructive: 0 84% 60%;
@@ -71,7 +72,7 @@
   --chart-4: 220 13% 75%;
   --chart-5: 220 13% 91%;
   
-  --radius: 0.5rem;
+  --radius: 0.625rem;
 }
 
 @layer base {
@@ -88,8 +89,12 @@
     font-feature-settings: "cv11", "ss01";
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+  h1, h2, h3 {
+    @apply font-serif font-semibold tracking-tight;
+  }
+  
+  h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight;
   }
 }
 
@@ -99,22 +104,16 @@
   }
   
   .animate-fade-in {
-    animation: fadeIn 0.25s ease-out forwards;
+    animation: fadeIn 0.3s ease-out forwards;
   }
   
   .animate-slide-up {
-    animation: slideUp 0.3s ease-out forwards;
+    animation: slideUp 0.4s ease-out forwards;
   }
   
-  .animate-slide-in-right {
-    animation: slideInRight 0.25s ease-out forwards;
-  }
-  
-  .stagger-1 { animation-delay: 0.05s; }
-  .stagger-2 { animation-delay: 0.1s; }
-  .stagger-3 { animation-delay: 0.15s; }
-  .stagger-4 { animation-delay: 0.2s; }
-  .stagger-5 { animation-delay: 0.25s; }
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.15s; }
+  .stagger-3 { animation-delay: 0.2s; }
 }
 
 @keyframes fadeIn {
@@ -125,7 +124,7 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -133,99 +132,121 @@
   }
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(-16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 .hero-overlay {
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.97) 0%,
-    rgba(255, 255, 255, 0.92) 50%,
-    rgba(255, 255, 255, 0.8) 100%
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.88) 40%,
+    rgba(255, 255, 255, 0.7) 100%
   );
 }
 
-.card-shadow {
-  box-shadow: 
-    0 1px 2px 0 rgb(0 0 0 / 0.03),
-    0 4px 8px -2px rgb(0 0 0 / 0.04),
-    0 12px 24px -4px rgb(0 0 0 / 0.04);
+@media (min-width: 1024px) {
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.85) 45%,
+      rgba(255, 255, 255, 0.6) 100%
+    );
+  }
 }
 
-.card-shadow-hover {
-  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+.card-refined {
+  background: white;
+  border: 1px solid hsl(220 13% 91%);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.02), 0 2px 8px -2px rgb(0 0 0 / 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-shadow-hover:hover {
-  box-shadow: 
-    0 4px 8px 0 rgb(0 0 0 / 0.06),
-    0 12px 24px -4px rgb(0 0 0 / 0.08),
-    0 24px 48px -8px rgb(0 0 0 / 0.08);
+.card-refined:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px -4px rgb(0 0 0 / 0.08), 0 8px 24px -8px rgb(0 0 0 / 0.06);
 }
 
-.btn-lift {
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+.card-static {
+  background: white;
+  border: 1px solid hsl(220 13% 91%);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.02), 0 2px 8px -2px rgb(0 0 0 / 0.04);
 }
 
-.btn-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px -4px rgb(208 2 27 / 0.35);
+.btn-primary {
+  @apply bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
-.btn-lift:active {
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -4px rgb(208 2 27 / 0.3);
+}
+
+.btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px -1px rgb(208 2 27 / 0.2);
+  box-shadow: none;
 }
 
-.btn-lift:focus-visible {
-  outline: 2px solid hsl(356 100% 41% / 0.4);
+.btn-primary:focus-visible {
+  outline: 2px solid hsl(356 100% 41% / 0.5);
   outline-offset: 2px;
 }
 
-.btn-lift:disabled {
-  opacity: 0.5;
-  pointer-events: none;
+.btn-secondary {
+  @apply bg-white text-foreground font-medium px-6 py-3 rounded-lg border-2 border-border;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-secondary:hover {
+  border-color: hsl(220 13% 70%);
+  background-color: hsl(30 10% 98%);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid hsl(356 100% 41% / 0.5);
+  outline-offset: 2px;
 }
 
 .header-shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.08);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.04);
 }
 
-.nav-link-underline {
+.nav-link {
   position: relative;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(220 9% 46%);
+  transition: color 0.15s ease;
 }
 
-.nav-link-underline::after {
+.nav-link:hover {
+  color: hsl(220 13% 9%);
+}
+
+.nav-link.active {
+  color: hsl(356 100% 41%);
+}
+
+.nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
   height: 2px;
   background: hsl(356 100% 41%);
-  transition: width 0.2s ease-out;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
 }
 
-.nav-link-underline:hover::after,
-.nav-link-underline.active::after {
-  width: 100%;
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
 .section-padding {
   @apply py-16 md:py-24;
-}
-
-.container-narrow {
-  @apply max-w-3xl mx-auto px-4 sm:px-6;
 }
 
 .container-wide {
@@ -241,7 +262,7 @@
   padding: 0.75rem 1rem;
   background: white;
   border-top: 1px solid hsl(220 13% 91%);
-  box-shadow: 0 -4px 12px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 -2px 8px -2px rgb(0 0 0 / 0.08);
 }
 
 @media (min-width: 768px) {
@@ -251,6 +272,27 @@
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid hsl(356 100% 41% / 0.4);
+  outline: 2px solid hsl(356 100% 41% / 0.5);
   outline-offset: 2px;
+}
+
+.dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: hsl(220 13% 85%);
+  transition: all 0.2s ease;
+}
+
+.dot-indicator.active {
+  width: 24px;
+  border-radius: 4px;
+  background: hsl(356 100% 41%);
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
