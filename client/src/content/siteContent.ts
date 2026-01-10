@@ -401,7 +401,7 @@ export const contact = {
 };
 
 export const footer = {
-  tagline: "Dublin's trusted family-run attic conversion specialists since 1995.",
+  tagline: "Dublin's trusted family-run attic conversion specialists since 1992.",
   links: [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
