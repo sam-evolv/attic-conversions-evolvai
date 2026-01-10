@@ -33,8 +33,8 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
-          isScrolled ? "header-solid" : ""
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled || isOpen ? "bg-white shadow-sm" : "bg-transparent"
         }`}
       >
         <div className="container-wide">
@@ -74,7 +74,7 @@ export function Header() {
           </div>
 
           {isOpen && (
-            <div className="lg:hidden pb-6 animate-fade-in" role="navigation">
+            <div className="lg:hidden pb-6 animate-fade-in bg-white" role="navigation">
               <nav className="flex flex-col gap-1">
                 {navigation.items.map((item) => (
                   <Link

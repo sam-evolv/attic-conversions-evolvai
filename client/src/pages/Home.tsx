@@ -7,7 +7,7 @@ import { CTASection } from "@/components/home/CTASection";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout heroPage>
       <Hero />
       <TrustBar />
       <IntroSection />

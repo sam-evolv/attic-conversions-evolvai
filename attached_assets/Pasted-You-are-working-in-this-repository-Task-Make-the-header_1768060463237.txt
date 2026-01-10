@@ -1,0 +1,48 @@
+You are working in this repository.
+
+Task:
+Make the header/toolbar visually integrate with the hero at the top of the page by using a transparent header when the user is fully scrolled to the top, and transitioning to a white header background once the user scrolls down.
+
+Requirements:
+
+* When the page is at scroll position 0 (fully scrolled up):
+
+  * Header background must be transparent.
+  * Header should sit on top of the hero (hero image reaches the very top of the viewport).
+  * Header text/icons/CTAs must remain legible on the hero (use existing styles; only adjust if strictly necessary for contrast).
+* When the user scrolls down (e.g., > 10–40px):
+
+  * Header background transitions to solid white.
+  * Header should maintain a premium feel: subtle shadow OR hairline border is acceptable, but keep it minimal.
+  * Ensure nav links/buttons remain readable on white.
+* Keep the existing header layout, spacing, typography, and components intact. Do not redesign.
+* Use a smooth transition (e.g., background-color, box-shadow, border-color) so the state change doesn’t feel abrupt.
+* Must work across desktop/tablet/mobile.
+* Must not cause layout jump:
+
+  * Header height must remain constant in both states.
+  * If switching between absolute/fixed/sticky, ensure padding/margins prevent content shifting.
+
+Implementation guidance (do this cleanly):
+
+* Add scroll detection in the Header component (or a small hook) to toggle a boolean like `isScrolled`.
+* Apply conditional classnames (Tailwind preferred) to switch between:
+
+  * `bg-transparent` (top)
+  * `bg-white` (scrolled)
+  * plus transition classes.
+* Ensure z-index keeps header above hero.
+* Ensure hero section accounts for header overlay (do NOT add random spacing; if needed, adjust hero top padding minimally and intentionally).
+* Test:
+
+  * Refresh at top: header is transparent over hero.
+  * Scroll down: header becomes white.
+  * Scroll back to top: header returns transparent.
+  * Verify no jitter, no CLS, and no mobile regressions.
+
+Acceptance Criteria:
+
+* At top: hero image visually reaches the top; header is transparent and feels integrated.
+* On scroll: header smoothly becomes white and looks intentional/premium.
+* No layout regressions, no jumpiness, and all CTA/nav elements remain usable and legible.
+  Proceed with implementation, test in preview, and confirm completion.
