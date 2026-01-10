@@ -20,13 +20,13 @@ export function IntroSection() {
         {homeIntro.steps.map((step, index) => (
           <div
             key={index}
-            className="relative bg-card rounded-xl p-8 card-shadow card-shadow-hover border border-border"
+            className="relative bg-card rounded-xl p-8 border border-border transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/20 group cursor-pointer"
             data-testid={`intro-step-${index}`}
           >
-            <div className="w-12 h-12 rounded-full bg-primary/10 text-primary font-serif font-bold text-xl flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-full bg-primary/10 text-primary font-serif font-bold text-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
               {step.number}
             </div>
-            <h3 className="text-xl font-serif font-semibold mb-3">
+            <h3 className="text-xl font-serif font-semibold mb-3 transition-colors duration-300 group-hover:text-primary">
               {step.title}
             </h3>
             <p className="text-muted-foreground leading-relaxed">
