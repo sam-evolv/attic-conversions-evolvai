@@ -5,7 +5,7 @@ import { companyInfo } from "@/content/siteContent";
 
 export function CTASection() {
   return (
-    <section className="text-primary-foreground py-16 md:py-24 bg-[#D0021B]">
+    <section className="text-primary-foreground py-16 md:py-24 bg-[#7a0101]">
       <div className="container-wide text-center">
         <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-4">
           Ready to Transform Your Attic?
