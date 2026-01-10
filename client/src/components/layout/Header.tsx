@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail, Clock, ExternalLink } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { navigation, companyInfo } from "@/content/siteContent";
 import { Button } from "@/components/ui/button";
 
@@ -37,52 +37,13 @@ export function Header() {
           isScrolled ? "header-shadow" : ""
         }`}
       >
-        <div className="bg-secondary text-secondary-foreground">
-          <div className="container-wide">
-            <div className="flex items-center justify-between h-9 text-xs">
-              <div className="flex items-center gap-4 sm:gap-6">
-                <a
-                  href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
-                  className="flex items-center gap-1.5 hover:text-white/80 transition-colors focus-ring rounded"
-                  data-testid="utility-phone"
-                >
-                  <Phone className="w-3 h-3" />
-                  <span className="hidden sm:inline">{companyInfo.phone}</span>
-                </a>
-                <a
-                  href={`mailto:${companyInfo.email}`}
-                  className="hidden sm:flex items-center gap-1.5 hover:text-white/80 transition-colors focus-ring rounded"
-                  data-testid="utility-email"
-                >
-                  <Mail className="w-3 h-3" />
-                  <span>{companyInfo.email}</span>
-                </a>
-                <span className="hidden md:flex items-center gap-1.5 text-white/70">
-                  <Clock className="w-3 h-3" />
-                  <span>{companyInfo.availability}</span>
-                </span>
-              </div>
-              <a
-                href={companyInfo.trustedPeople}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-white/80 transition-colors focus-ring rounded"
-                data-testid="trusted-link"
-              >
-                <span>TrustedPeople</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-          </div>
-        </div>
-
         <div className="container-wide">
-          <div className="flex items-center justify-between h-16 lg:h-18">
+          <div className="flex items-center justify-between h-16 lg:h-[72px]">
             <Link href="/" className="flex-shrink-0 focus-ring rounded" data-testid="logo">
               <Logo className="h-8 w-auto" />
             </Link>
 
-            <nav className="hidden lg:flex items-center justify-center flex-1 gap-1 mx-8" role="navigation">
+            <nav className="hidden lg:flex items-center justify-center flex-1 gap-1 mx-6" role="navigation">
               {navigation.items.map((item) => (
                 <Link
                   key={item.href}
@@ -95,14 +56,22 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-4 flex-shrink-0">
+            <div className="flex items-center gap-3 flex-shrink-0">
               <a
                 href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
                 className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded px-2 py-1"
                 data-testid="header-phone"
               >
                 <Phone className="w-4 h-4" />
-                <span className="hidden xl:inline">{companyInfo.phone}</span>
+                <span>{companyInfo.phone}</span>
+              </a>
+              <a
+                href={`mailto:${companyInfo.email}`}
+                className="hidden xl:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded px-2 py-1"
+                data-testid="header-email"
+              >
+                <Mail className="w-4 h-4" />
+                <span>{companyInfo.email}</span>
               </a>
               <Link href={navigation.cta.href}>
                 <Button className="hidden sm:flex btn-primary h-10 px-5 text-sm" data-testid="header-cta">
@@ -138,6 +107,22 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
+                <div className="flex flex-col gap-2 mt-3 pt-3 border-t border-border">
+                  <a
+                    href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
+                    className="flex items-center gap-2 px-4 py-2 text-sm text-muted-foreground"
+                  >
+                    <Phone className="w-4 h-4" />
+                    {companyInfo.phone}
+                  </a>
+                  <a
+                    href={`mailto:${companyInfo.email}`}
+                    className="flex items-center gap-2 px-4 py-2 text-sm text-muted-foreground"
+                  >
+                    <Mail className="w-4 h-4" />
+                    {companyInfo.email}
+                  </a>
+                </div>
                 <Link href={navigation.cta.href} onClick={() => setIsOpen(false)}>
                   <Button className="w-full mt-2 btn-primary" data-testid="mobile-cta">
                     {navigation.cta.label}

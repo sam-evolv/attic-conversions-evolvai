@@ -21,19 +21,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <LogoMark className="w-8 h-8 text-white/80" />
+              <LogoMark className="w-9 h-9 text-white/70" />
               <span className="text-xl font-serif font-semibold">
                 Attic Conversions
               </span>
             </div>
-            <p className="text-secondary-foreground/60 mb-2 max-w-sm text-sm">
+            <p className="text-secondary-foreground/60 mb-2 max-w-sm text-sm leading-relaxed">
               {footer.tagline}
             </p>
-            <p className="text-secondary-foreground/40 text-sm mb-6">
-              Family-run since 1995 · 30+ years experience
+            <p className="text-secondary-foreground/50 text-sm mb-6">
+              Family-run since 1995
             </p>
             
-            <address className="not-italic space-y-2 text-sm">
+            <address className="not-italic space-y-3 text-sm">
               <a
                 href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
                 className="flex items-center gap-3 text-secondary-foreground/60 hover:text-secondary-foreground transition-colors focus-ring rounded"
@@ -61,7 +61,7 @@ export function Footer() {
                 href={companyInfo.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors focus-ring"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors focus-ring"
                 data-testid="footer-facebook"
                 aria-label="Facebook"
               >
@@ -71,7 +71,7 @@ export function Footer() {
                 href={companyInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors focus-ring"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors focus-ring"
                 data-testid="footer-linkedin"
                 aria-label="LinkedIn"
               >
@@ -92,7 +92,7 @@ export function Footer() {
 
           <nav aria-label="Footer navigation">
             <h3 className="font-semibold mb-4 text-sm text-secondary-foreground/80">Quick Links</h3>
-            <ul className="flex flex-col gap-2 text-sm">
+            <ul className="flex flex-col gap-2.5 text-sm">
               {footer.links.map((link) => (
                 <li key={link.href}>
                   <Link

@@ -1,0 +1,67 @@
+You are Replit Agent. The current build has drifted from the brief. You must bring the site back on track and implement the following EXACT changes. Do not ignore or substitute any item. After coding, verify visually in Preview at multiple breakpoints that all requirements are satisfied.
+
+## 1. HERO SECTION (CRITICAL)
+- Remove the “Your Journey Starts Here / 3 Steps to Your New Space” card entirely from the hero. It must not appear above the fold.
+- Center-align all hero content. Constrain to max width (e.g. `max-w-3xl`).
+- Increase whitespace: add generous top/bottom padding and vertical spacing between headline, subcopy, and CTAs.
+- Replace the generic living-room hero background with a context-specific attic/roof motif. Options:
+  - A soft gradient overlaid with a faint roofline or truss SVG pattern.
+  - A minimal blueprint-style background referencing an attic conversion (no full-colour living room).
+  - Ensure high contrast for text.
+- Update hero headline to exactly: **“Transform Your Attic Into Beautiful, Functional Space”**.
+- Condense subcopy into a single sentence: e.g. “Family‑run specialists with over 30 years’ experience delivering certified attic conversions across Dublin.”
+- Center the CTAs beneath the subcopy. Two buttons only:
+  - Primary: “Get a Quote”
+  - Secondary: “Start Attic Journey”
+- Add a compact row beneath the CTAs with trust signals (icons + text) in one line: “Family‑Run Since 1995 • 1,000+ Conversions • Fully Insured • Certified Compliance”. Ensure spacing is consistent and there is no mysterious gap as currently seen.
+
+## 2. HEADER & LOGO INTEGRATION
+- Ensure the company logo is displayed in the header on the left. Use the supplied SVG/PNG asset; do not invent new artwork.
+- The brand name must be “Attic Conversions” everywhere, not “Dublin Attic Conversions”.
+- The header must include: logo (left), navigation links (center), phone number “086 317 5893” and email “info@atticconversions.ie” with icons (right), and a primary “Get a Quote” CTA.
+- Make sure header spacing is balanced; nothing should feel cramped. On scroll, the header may stick with a subtle shadow.
+- Add the logo again in the footer with a short credibility line (“Family‑run since 1995”) and include contact details, address, and social links.
+
+## 3. CONTENT COMPLETENESS & NAVIGATION
+- You claimed to have all information from the original site; ensure that is truly reflected. The new site must include:
+  - Detailed service descriptions (standard conversion, dormers, hipped roofs, timber frame considerations).
+  - Roof suitability rules (height, roof type) with clear explanations.
+  - Habitable vs storage rules (2.4m / 50% concept).
+  - Planning permission triggers (dormer, Velux, habitable status).
+  - Fire regulation considerations for 3‑storey houses.
+  - Certification and BER/insurance guidance.
+  - Timber frame inspection requirements and certification info.
+  - Cost and timeline factors (ranges, what drives cost, typical durations).
+  - Old roof / slate roof warnings and advice.
+  - Water tank relocation logic and heating guidance.
+  - Links to external resources where appropriate (BER ratings, building regs).
+  - Advice Centre content: convert long articles into digestible “truth blocks” with optional “Read more” expanders. Categorise questions and surface a curated set of popular questions for users who don’t know what to ask.
+- Build pages or sections to house this information (e.g., Services, Suitability, Process, Costs & Timeline, Advice Centre). Use accordions or tabs to prevent overwhelming the user.
+
+## 4. TESTIMONIALS & TRUST
+- Replace the static testimonial display with an auto-advancing carousel that loops through at least 6–10 real testimonials (sample content has been provided: Ruby & Vijay, Peter Burke, Tom Kiely, etc.). Each card should display 1–2 sentences, customer name, and area.
+- Center the “What Our Clients Say” heading. Cards must feel “alive”: subtle elevation, gentle hover effects, and swipeable on mobile.
+- Add dot indicators for progress and show/hide arrow controls where appropriate. Autoplay should pause on hover.
+
+## 5. BRAND COLOURS & QUALITY
+- Adopt the specified colour palette: primary red `#990101`, warm off-white backgrounds, charcoal text, and soft neutrals. Remove any amber/yellow.
+- Apply red sparingly: primary CTAs, key accents, logos. Avoid large red sections.
+- Ensure buttons, cards, and other elements have consistent shadows, rounded corners, and refined hover/focus states. Buttons should feel substantial and interactive; cards should not be flat and cheap.
+
+## 6. MISSING CONTENT & LINKS
+- Restore any missing information such as references to new house regulations, BER ratings, Dublin city rules, and other advice content from the original site. If the source content is long, distill it into simple, categorized summaries and provide links to the full documents or pages.
+- Ensure the Advice Centre is accessible via navigation and that all important topics from the original site are represented in the new structure.
+
+## 7. LINT & QUALITY CHECKS
+- Fix any runtime or import errors you encounter (e.g., missing `popularQuestions` exports).
+- Do not leave any internal commentary visible in the UI.
+- Check the console for warnings. Address unused exports and missing data imports.
+
+## DELIVERY
+- Confirm the changes by listing the files you modified and the tasks done.
+- Test the site on desktop and mobile in Preview mode and confirm:
+  - The hero’s old right-hand card is gone and the new hero meets spec.
+  - The logo is correctly integrated.
+  - The trust badges row is clean, with no unexplained gaps.
+  - Testimonials carousel is functioning.
+  - All pages reflect the full information from the original site, organised into digestible sections.
