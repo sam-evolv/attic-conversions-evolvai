@@ -28,7 +28,7 @@ export function Header() {
           <div className="flex items-center justify-between h-20">
             <Link href="/" className="flex-shrink-0 focus-ring rounded logo-hover" data-testid="logo">
               <img 
-                src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_03_57_54_PM_1768060725644.png" 
+                src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_04_10_40_PM_1768061448942.png" 
                 alt="Attic Conversions" 
                 className="h-12 w-auto object-contain"
               />

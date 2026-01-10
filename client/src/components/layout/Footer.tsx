@@ -10,9 +10,9 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-5 logo-hover">
               <img 
-                src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_03_57_54_PM_1768060725644.png" 
+                src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_04_10_40_PM_1768061448942.png" 
                 alt="Attic Conversions" 
-                className="h-16 w-auto object-contain brightness-0 invert opacity-90"
+                className="h-16 w-auto object-contain"
               />
             </Link>
             <p className="text-white/60 mb-6 max-w-sm text-sm leading-relaxed">
