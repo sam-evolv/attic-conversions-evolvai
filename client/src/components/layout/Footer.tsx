@@ -63,6 +63,16 @@ export function Footer() {
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
+
+            <div className="mt-8">
+              <h3 className="font-semibold mb-4 text-sm text-white/80">Hours</h3>
+              <p className="text-white/50 text-sm leading-relaxed mb-2">
+                {companyInfo.hours}
+              </p>
+              <p className="text-white/70 text-sm font-medium">
+                {companyInfo.availability}
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-col items-center order-1 lg:order-2">
@@ -95,16 +105,6 @@ export function Footer() {
                 ))}
               </ul>
             </nav>
-
-            <div>
-              <h3 className="font-semibold mb-4 text-sm text-white/80">Hours</h3>
-              <p className="text-white/50 text-sm leading-relaxed mb-2">
-                {companyInfo.hours}
-              </p>
-              <p className="text-white/70 text-sm font-medium">
-                {companyInfo.availability}
-              </p>
-            </div>
           </div>
         </div>
 
