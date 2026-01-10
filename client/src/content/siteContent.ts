@@ -235,6 +235,17 @@ export const costsTimeline = {
       },
     ],
   },
+  timelineFactors: {
+    headline: "What Affects the Timeline?",
+    factors: [
+      "Property access and working conditions",
+      "Structural complexity of your roof",
+      "Whether planning permission is needed",
+      "Scope of plumbing and electrical work",
+      "Weather conditions during construction",
+      "Availability of materials",
+    ],
+  },
   cta: { label: "Get Your Exact Quote", href: "/contact" },
 };
 
