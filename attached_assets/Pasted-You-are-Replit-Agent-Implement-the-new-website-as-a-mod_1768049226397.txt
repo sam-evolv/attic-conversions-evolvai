@@ -1,0 +1,60 @@
+You are Replit Agent. Implement the new website as a modern responsive web app with clean, premium UI. Use Next.js (App Router) + TypeScript + Tailwind. Keep it fast, accessible, and easy to iterate.
+
+BUILD REQUIREMENTS:
+- Next.js App Router structure
+- Tailwind CSS with a small design system
+- Responsive, high Lighthouse scores
+- SEO: metadata per page, OpenGraph, sitemap, robots
+- Components built for reuse: Hero, Section, Card, Accordion, Stepper, TestimonialCarousel, TrustBar, CTASection
+- Content should be data-driven from a single file so we can iterate copy without hunting across pages.
+
+DESIGN DIRECTION (premium but not flashy):
+- Background: warm off-white or very light neutral
+- Typography: elegant, readable (e.g. Inter + a subtle serif for headings if desired)
+- Spacing: generous whitespace, calm layout
+- Buttons: one primary style + one secondary
+- Visuals: simple icons + subtle diagrams (no gimmicks)
+- Animations: minimal (fade/slide), only to improve comprehension, not decoration
+
+PAGES TO IMPLEMENT:
+- / (Home)
+- /attic-journey (Interactive Journey)
+- /services
+- /suitability
+- /habitable-vs-storage
+- /process
+- /costs-timeline
+- /faq
+- /contact
+
+ATTIC JOURNEY IMPLEMENTATION:
+- A stepper UI with 5 steps
+- Each step has:
+  - short intro copy
+  - 2-4 selectable options (radio style)
+  - dynamic recommendation panel that updates based on selections
+  - “What this means” explanation
+  - “Common questions” expandable list
+  - CTA button
+- Add a “summary” at the end: user selections + recommended next action + pre-filled contact message template
+
+DATA MODEL:
+Create a content file: /src/content/siteContent.ts containing:
+- navigation labels
+- global CTA text
+- hero copy
+- journey steps content + logic map
+- FAQ categories + questions/answers
+- testimonials
+- trust badges
+- contact details
+
+ENGINEERING QUALITY BAR:
+- Strict types for content models
+- Components documented via props
+- No hard-coded text in components (pull from siteContent.ts)
+- Accessible accordions and form labels
+- Clean layout on mobile; avoid dense text blocks
+
+DELIVERABLE:
+Create the full scaffold + all pages with placeholder images (use simple local SVGs if needed). Make sure the Attic Journey works end-to-end with dynamic outputs. Provide a short README in /README.md explaining how to edit content and where the journey logic lives.

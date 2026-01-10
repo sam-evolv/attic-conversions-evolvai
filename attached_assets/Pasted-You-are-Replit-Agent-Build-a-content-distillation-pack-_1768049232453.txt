@@ -1,0 +1,36 @@
+You are Replit Agent. Build a “content distillation pack” from the existing attic conversion site’s knowledge. We are NOT copying their current layout. We are restructuring the same knowledge into scannable blocks.
+
+Task:
+Populate /src/content/siteContent.ts with a complete, structured knowledge base that reflects the core information currently on the site, distilled into:
+- Truth blocks (short, plain-English, 2-5 sentences)
+- Expandable detail sections (bullet points)
+- “What this means for you” interpretations
+- Guardrails (when to consult architect/engineer, when planning is needed, safety notes)
+
+Include all major topics:
+- Roof suitability: height measurement method, expected loss from conversion, use-cases by height
+- Roof shape: gable vs hipped, stairs problem, solutions (ladder, corridor stairs, side dormer, dutch hip)
+- Habitable vs storage: 2.4m/50% concept, dormer impact, planning requirement
+- Planning permission triggers (dormer, front Velux, habitable status)
+- Fire regulations implications for 3-storey houses and typical requirements
+- Certification of compliance: what it is and why it matters for selling/remortgage
+- Timber frame considerations: engineer inspection + certification
+- Dormers: what they do/don’t do (height vs space), planning constraints, modern restrictions
+- Heating/radiators vs electric heating guidance
+- Timeline: typical durations; what extends it (ensuite/dormer/bungalow)
+- Cost guidance: explain that proper quote needs survey; what drives cost; ranges if available
+- Insurance notification guidance
+- Old roof / slate roof warning and advice
+- Water tanks/hot press: relocation logic; pressurised system cost implications
+- FAQ: convert the long FAQ list into categories with “Top 10” surfaced first
+
+Also include:
+- A curated “Popular Questions” set for people who don’t know what to ask.
+- A “Next Best Action” suggestion after each topic.
+
+Do NOT add technical jargon. Keep it authoritative but simple. Keep humour minimal.
+
+Deliverable:
+- A complete siteContent.ts with rich structured data
+- Ensure Attic Journey logic has enough content to produce accurate guidance based on user selections
+- Ensure FAQ page can render categories + search + featured questions

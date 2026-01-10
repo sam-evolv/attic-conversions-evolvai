@@ -1,0 +1,55 @@
+You are Replit Agent. We are rebuilding an attic conversion company website (family-run, Dublin) to be modern, premium, simple, and highly usable. The current website has a huge amount of information but is overwhelming. The goal is to distill and present it in a calm, confident, guided way that makes visitors feel: “I understand this now, and I trust these guys.”
+
+CORE OUTCOME:
+- Elevate brand perception (professional, experienced, trustworthy) without feeling “too techy” or over-designed.
+- Make information easy to digest via progressive disclosure.
+- Replace long FAQ walls with a “guided journey” plus curated pre-set questions. Avoid forcing users to know what to ask.
+- Reduce cognitive load and increase conversions (quote requests + calls).
+
+PRIMARY UX PILLARS:
+1) Don’t dump information. Reveal the right thing at the right time.
+2) Guided “Attic Journey” interactive flow (this is the flagship feature).
+3) Short, scannable knowledge blocks; expandable sections for depth.
+4) Strong social proof (testimonials, trust badges) without clutter.
+5) Clear next-best-action CTA at end of every page/step.
+
+INFORMATION ARCHITECTURE (target pages/sections):
+- Home (hero + quick trust + 3-step entry into Attic Journey + examples + testimonials + CTA)
+- Attic Journey (interactive multi-step guide)
+- Services (standard conversion, dormers, en-suites, hipped roofs solutions, timber frame)
+- Suitability (roof height + roof shape)
+- Habitable vs Storage (simple explanation + what it means)
+- Process (survey -> planning if needed -> build -> certification)
+- Costs & Timeline (ranges + what drives cost + typical durations)
+- FAQ Library (curated categories + popular questions; NOT a long wall of text)
+- Gallery / Case Studies (before/after + locations optional)
+- Contact / Quote (simple, friendly, minimal friction)
+
+ATTIC JOURNEY (flagship interactive flow):
+Design an interactive flow that guides users through 5 stages:
+1) Suitability Check (height + roof type)
+2) Intended Use (office, kids room, adult bedroom)
+3) Constraints & Options (stairs location, hipped roof, dormer/dutch hip)
+4) Process & Compliance (planning if needed, building regs, fire regs basics, certification)
+5) Next Steps (what info to send, how the quote works, CTA to call/email/form)
+
+Each stage should show:
+- 1-2 key “truth blocks”
+- a simple visual (icon/diagram)
+- a “What this means for you” paragraph
+- expandable “Details” accordion for deeper reading
+- a CTA at the end (Continue / Get Quote / Call)
+
+TONE:
+- Calm, competent, experienced, plain-English.
+- Light warmth; no startup vibes; no slang; no heavy humour.
+- Confidence and clarity over hype.
+
+DELIVERABLE:
+Before coding anything, produce a written blueprint:
+- Site map + navigation labels
+- Page-by-page section outlines
+- Attic Journey step copy outline (headlines + short body)
+- Component list (hero, journey step card, accordion, testimonial slider, trust bar, CTA strip, etc.)
+- Conversion strategy: what CTA appears where
+Then wait for confirmation in-code (but still proceed to implement after you output the blueprint).
