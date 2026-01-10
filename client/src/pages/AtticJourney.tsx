@@ -56,10 +56,6 @@ export default function AtticJourney() {
       <Section first>
         <div className="max-w-2xl mx-auto">
           <div className="mb-8">
-            <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-4">
-              <ArrowLeft className="w-4 h-4 mr-1" />
-              Back to Home
-            </Link>
             <h1 className="text-3xl sm:text-4xl font-bold mb-2">
               Your Attic Journey
             </h1>
