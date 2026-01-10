@@ -4,6 +4,19 @@ import { Menu, X, Phone, Mail, Clock, ExternalLink } from "lucide-react";
 import { navigation, companyInfo } from "@/content/siteContent";
 import { Button } from "@/components/ui/button";
 
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 180 40" className={className} aria-label="Attic Conversions">
+      <g fill="none">
+        <path d="M4 36 L20 8 L36 36" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-primary"/>
+        <path d="M10 28 L20 12 L30 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"/>
+        <line x1="20" y1="12" x2="20" y2="36" stroke="currentColor" strokeWidth="1.5" className="text-primary"/>
+      </g>
+      <text x="44" y="28" fontFamily="Georgia, serif" fontSize="18" fontWeight="600" fill="currentColor" className="text-foreground">Attic Conversions</text>
+    </svg>
+  );
+}
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,18 +78,11 @@ export function Header() {
 
         <div className="container-wide">
           <div className="flex items-center justify-between h-16 lg:h-18">
-            <Link href="/" className="flex items-center gap-2 focus-ring rounded">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
-              <div className="hidden sm:block">
-                <span className="text-lg font-serif font-semibold text-foreground" data-testid="logo">
-                  {navigation.logo}
-                </span>
-              </div>
+            <Link href="/" className="flex-shrink-0 focus-ring rounded" data-testid="logo">
+              <Logo className="h-8 w-auto" />
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-1" role="navigation">
+            <nav className="hidden lg:flex items-center justify-center flex-1 gap-1 mx-8" role="navigation">
               {navigation.items.map((item) => (
                 <Link
                   key={item.href}
@@ -89,7 +95,7 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-shrink-0">
               <a
                 href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
                 className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded px-2 py-1"

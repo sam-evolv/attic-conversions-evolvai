@@ -1,0 +1,90 @@
+You ignored key requirements and shipped changes that move the UI backwards. Roll back the hero/header work and implement the following exactly, with no substitutions.
+
+## 0) Operating rules (non-negotiable)
+
+* Do not “interpret” or partially apply items. Implement every bullet below.
+* Do not add new UI blocks/cards that weren’t requested.
+* Do not add placeholder logos. Use the existing logo asset(s) already in the repo (or wire the provided SVG if it already exists).
+* After changes: verify in Preview on desktop + mobile, and confirm each checklist item is done.
+
+---
+
+## 1) Hero: remove the “3 Steps to Your New Space” card entirely
+
+* Delete the entire right-side hero card/module (“Your Journey Starts Here / 3 Steps…”). It must not exist in any viewport.
+* Replace the hero layout with a single, centered content column.
+
+### Hero layout & spacing (centered block)
+
+* Constrain hero content to a max width (e.g., `max-w-3xl` or `max-w-4xl`).
+* Center horizontally and vertically within the hero area (use consistent padding for mobile).
+* Increase whitespace and breathing room:
+
+  * Increase line-height and paragraph spacing
+  * Increase gap between headline, subcopy, CTAs, and trust icons
+  * Keep the hero visually “premium” and calm, not dense
+
+### Hero headline (exact text + casing)
+
+Set H1 to exactly:
+**Transform Your Attic Into Beautiful, Functional Space**
+
+### Hero subcopy (rewrite to be aligned with Dublin + certified + 30+ years)
+
+* 1–2 short sentences max. No waffle. No “steps” language.
+
+### CTAs
+
+* Keep two CTAs.
+* Primary CTA: “Get a Quote”
+* Secondary CTA: “Start Attic Journey”
+* Align CTAs centered under the copy. Keep sizes consistent and premium.
+
+---
+
+## 2) Background: replace generic living-room photo look with context-specific attic conversion styling
+
+* Remove any current hero background image that reads like a staged living room.
+* Replace with ONE of the following approaches (pick the best option for the current repo assets; do not invent new images):
+  A) A subtle blueprint / roofline / loft-outline pattern overlay (SVG/CSS) + warm off-white base
+  B) A soft gradient + faint roof-truss geometry (SVG) placed behind the hero
+* The background must feel “attic/roof/construction” not “generic interior design.”
+* Keep contrast high and readability excellent.
+
+---
+
+## 3) Header: properly integrate the real logo and fix alignment
+
+* Add the company logo into the header at the left of navigation.
+* The logo must be the real brand mark from repo assets (not a red square with an “A”, not a placeholder).
+* Ensure the header layout is balanced:
+
+  * Left: logo
+  * Middle: nav items
+  * Right: phone + CTA button
+* Make sure mobile header is clean and tap targets are correct.
+
+---
+
+## 4) Comments/content hygiene: remove “worse” commentary blocks in the UI
+
+* If any new “comment”/meta text blocks were added into the actual site UI (not code comments), remove them.
+* The site should not display internal commentary, implementation notes, or “we decided…” type text anywhere.
+
+---
+
+## 5) Delivery checklist (must be confirmed in your final message)
+
+Reply with:
+
+* A bullet list mapping each section above to the file(s) you changed
+* A short confirmation checklist:
+
+  * Hero steps card removed ✅
+  * H1 exact text ✅
+  * Hero centered + increased whitespace ✅
+  * Background now attic/roof specific ✅
+  * Real logo integrated ✅
+  * No internal commentary visible ✅
+
+Proceed now.

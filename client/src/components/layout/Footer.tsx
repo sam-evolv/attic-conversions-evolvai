@@ -2,16 +2,26 @@ import { Link } from "wouter";
 import { footer, companyInfo } from "@/content/siteContent";
 import { Phone, Mail, MapPin, Facebook, Linkedin, ExternalLink } from "lucide-react";
 
+function LogoMark({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 40 40" className={className} aria-label="Attic Conversions">
+      <g fill="none">
+        <path d="M4 36 L20 8 L36 36" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M10 28 L20 12 L30 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <line x1="20" y1="12" x2="20" y2="36" stroke="currentColor" strokeWidth="1.5"/>
+      </g>
+    </svg>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground py-16" role="contentinfo">
       <div className="container-wide">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
-              </div>
+            <div className="flex items-center gap-3 mb-4">
+              <LogoMark className="w-8 h-8 text-white/80" />
               <span className="text-xl font-serif font-semibold">
                 Attic Conversions
               </span>
