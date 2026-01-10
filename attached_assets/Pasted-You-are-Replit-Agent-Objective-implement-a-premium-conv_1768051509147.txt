@@ -1,0 +1,168 @@
+You are Replit Agent. Objective: implement a premium, conversion-focused website refresh for **Attic Conversions** (Dublin). Prioritise clarity, trust signals, and measurable lead-gen. Deliver production-ready UI/UX with consistent design tokens, responsive behaviour, and polished micro-interactions.
+
+## 1) Brand + Identity (Non-negotiables)
+
+* Brand name everywhere: **Attic Conversions**
+* Primary CTA language: **Get a Quote**
+* Contact details (consistent in header + footer + mobile CTA):
+
+  * Phone: **086 317 5893**
+  * Email: **[info@atticconversions.ie](mailto:info@atticconversions.ie)**
+  * Availability label: **Available Anytime**
+* Social/Trust links in footer:
+
+  * Facebook, LinkedIn, TrustedPeople (use existing URLs already in project or add placeholders if missing)
+
+## 2) Color System (Design Tokens)
+
+Remove amber/yellow entirely. Use **brand red + charcoal + white/neutral**.
+
+* Primary / Brand Red: **#D0021B**
+* Charcoal text: **#111827** (or equivalent neutral-900)
+* Background: **#FFFFFF** and subtle off-white: **#F9FAFB**
+* Borders: **#E5E7EB**
+* Muted text: **#6B7280**
+* Focus ring: Brand red with accessible outline (e.g., red at 30–40% alpha)
+
+Apply tokens across components (buttons, links, form inputs, badges, carousel controls).
+
+## 3) Typography
+
+Use a clean, modern stack (Inter preferred). Headings slightly heavier than body.
+
+* Headings: 600–700 weight
+* Body: 400–500 weight
+  Keep line-length readable, strong hierarchy, generous spacing.
+
+## 4) Global Layout + Navigation
+
+Implement a **two-row sticky header**:
+
+1. Utility bar (dark/charcoal background):
+
+   * Phone + Email + “Available Anytime”
+2. Main nav row:
+
+   * Logo left
+   * Nav: Home, Attic Journey, Services, Process, Costs & Timeline, FAQ, Contact
+   * Right side: phone icon + **Get a Quote** primary button
+     Sticky header adds subtle shadow on scroll.
+
+Navigation polish:
+
+* Hover underline/active state for nav links
+* Clear current page indication
+
+## 5) Interaction Standards (Buttons/Cards)
+
+Buttons:
+
+* Primary: brand red background, white text
+* Hover: slight lift + stronger shadow
+* Active: press down (translateY) + reduced shadow
+* Disabled states clearly muted
+
+Cards:
+
+* Default: soft border + light shadow
+* Hover: elevate with slightly increased shadow + subtle translateY
+
+Keep motion minimal and purposeful (200–250ms, ease-out). No gimmicks.
+
+## 6) Hero Section (Homepage)
+
+Split layout:
+
+* Left: value prop + subcopy + CTAs
+
+  * Primary CTA: Get a Quote
+  * Secondary CTA: Start Attic Journey
+* Right: “3 Steps” / Journey teaser card (clickable)
+
+Add trust badges in a **2x2 grid** under hero copy (e.g., “Family-Run Since 1995”, “Fully Insured”, “Certified Compliance”, “Dublin Specialists” — adjust wording as needed).
+
+Optional: subtle background image with white overlay for readability (ensure strong contrast).
+
+## 7) “Attic Journey” (Flagship Conversion Flow)
+
+Create/maintain route: **/attic-journey**
+Goal: guided qualification + lead capture. Implement:
+
+* Step-based UI (3 steps) with progress indicator
+* “Key Fact” callout at top (simple, factual)
+* Example step content (match what’s already drafted in preview):
+
+  * “How high is your attic at its highest point?”
+
+    * 2.4m or more (Excellent headroom)
+    * 2.2m–2.4m (Workable headroom)
+    * Under 2.2m (Limited without dormer)
+    * I’m not sure (We can help measure)
+* Expandable “Show more details” disclosure
+* CTA at end: “Get a Quote” / “Request Assessment”
+* Capture form: name, email, phone, message, plus Journey answers in payload
+* Validation, success state, and clear next steps
+* Mobile-first ergonomics (thumb-friendly buttons)
+
+## 8) Testimonials (Credibility Engine)
+
+Upgrade testimonials section:
+
+* Expand to **12** testimonials (realistic Dublin locations)
+* Implement carousel:
+
+  * Auto-advance every **6s**
+  * Pause on hover
+  * Desktop shows **3 cards**
+  * Controls: arrows + dot indicators + play/pause
+* Add link: **Read All Testimonials**
+
+## 9) Footer (Complete + Trustworthy)
+
+Include:
+
+* Address block (Howth, Co. Dublin)
+* Phone, Email
+* Social links (Facebook, LinkedIn)
+* TrustedPeople link
+* Hours/availability (“Available Anytime”)
+* Copyright: © 2026 Attic Conversions
+
+## 10) Pages + Content Structure (Minimum viable set)
+
+Implement clean, consistent layouts for:
+
+* Services (overview + service cards)
+* Process (steps timeline)
+* Costs & Timeline (ranges + factors + typical durations)
+* FAQ (accordion)
+* Contact (form + contact info)
+
+Keep copy concise, practical, and trust-oriented. Avoid fluff.
+
+## 11) Engineering Requirements (Quality Bar)
+
+* Responsive across mobile/tablet/desktop
+* Consistent spacing system (e.g., 4/8/12/16/24/32)
+* Accessible:
+
+  * keyboard nav
+  * focus states
+  * aria labels for carousel + controls
+  * sufficient contrast
+* Reusable components (Button, Card, Section, Badge, Carousel, Stepper)
+* No broken links/routes
+* Ensure the “Get a Quote” CTA is prominent on every page
+
+## 12) Delivery Checklist
+
+When done, confirm:
+
+* Brand name updated everywhere
+* Amber removed everywhere; red system applied consistently
+* Header + footer contact details correct
+* Attic Journey flow works end-to-end
+* Testimonials carousel meets spec
+* Mobile CTA behaviour works (optional sticky bottom “Get a Quote” bar on mobile)
+
+Proceed to implement directly in the existing project structure.

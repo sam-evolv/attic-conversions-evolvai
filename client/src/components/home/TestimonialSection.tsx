@@ -38,17 +38,17 @@ export function TestimonialSection() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-2">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-2">
               What Our Clients Say
             </h2>
             <p className="text-lg text-muted-foreground">
               Real stories from Dublin homeowners we've helped.
             </p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" role="group" aria-label="Carousel controls">
             <button
               onClick={() => setIsPaused(!isPaused)}
-              className="p-2 rounded-full hover:bg-white transition-colors"
+              className="p-2 rounded-full hover:bg-white transition-colors focus-ring"
               aria-label={isPaused ? "Play carousel" : "Pause carousel"}
               data-testid="testimonial-pause"
             >
@@ -85,41 +85,48 @@ export function TestimonialSection() {
           className="grid md:grid-cols-3 gap-6"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          role="region"
+          aria-label="Testimonials carousel"
+          aria-live="polite"
         >
           {visibleTestimonials.map((testimonial, index) => (
-            <div
+            <article
               key={`${current}-${index}`}
               className="bg-white rounded-xl p-6 card-shadow card-shadow-hover border border-border animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <Quote className="w-8 h-8 text-primary/20 mb-4" />
+              <Quote className="w-8 h-8 text-primary/20 mb-4" aria-hidden="true" />
               <blockquote className="text-foreground leading-relaxed mb-6 min-h-[80px]">
                 "{testimonial.quote}"
               </blockquote>
-              <div className="border-t border-border pt-4">
-                <p className="font-semibold text-foreground">
-                  {testimonial.author}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.location}
-                </p>
-              </div>
-            </div>
+              <footer className="border-t border-border pt-4">
+                <cite className="not-italic">
+                  <p className="font-semibold text-foreground">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {testimonial.location}
+                  </p>
+                </cite>
+              </footer>
+            </article>
           ))}
         </div>
 
-        <div className="flex justify-center gap-1.5 mt-8">
+        <div className="flex justify-center gap-1.5 mt-8" role="tablist" aria-label="Testimonial navigation">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
+              className={`w-2 h-2 rounded-full transition-all focus-ring ${
                 index === current
                   ? "bg-primary w-6"
                   : "bg-border hover:bg-muted-foreground"
               }`}
               data-testid={`testimonial-dot-${index}`}
               aria-label={`Go to testimonial ${index + 1}`}
+              aria-selected={index === current}
+              role="tab"
             />
           ))}
         </div>

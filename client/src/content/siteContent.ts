@@ -28,12 +28,12 @@ export const hero = {
   headline: "Transform Your Attic Into Beautiful, Functional Space",
   subheadline: "Family-run specialists with 30+ years' experience delivering certified attic conversions across Dublin.",
   primaryCta: { label: "Get a Quote", href: "/contact" },
-  secondaryCta: { label: "Call 086 317 5893", href: "tel:0863175893" },
+  secondaryCta: { label: "Start Attic Journey", href: "/attic-journey" },
   trustBadges: [
-    "30+ Years Experience",
+    "Family-Run Since 1995",
     "Fully Insured",
-    "Building Regs Certified",
-    "1000+ Conversions",
+    "Certified Compliance",
+    "Dublin Specialists",
   ],
 };
 
@@ -116,117 +116,7 @@ export const services = {
       ],
       idealFor: "Houses with hipped roofs wanting maximum space",
     },
-    {
-      id: "timber",
-      title: "Timber Frame Houses",
-      shortDescription: "Specialist conversion service for timber frame properties.",
-      details: [
-        "Structural engineer inspection required",
-        "Special certification process",
-        "Modified construction approach",
-        "Full compliance documentation",
-        "Experience with all timber frame types",
-      ],
-      idealFor: "Modern timber frame homes built since 1990s",
-    },
   ],
-};
-
-export const suitability = {
-  headline: "Is Your Attic Suitable?",
-  subheadline: "Two key factors determine whether your attic can be converted: ceiling height and roof shape.",
-  heightSection: {
-    title: "Ceiling Height",
-    truthBlock: "You need at least 2.2 metres from the top of your ceiling joists to the underside of the ridge beam. This is measured at the highest point, standing in the middle of your attic.",
-    howToMeasure: [
-      "Stand in the centre of your attic, directly under the ridge",
-      "Measure from the top of the floor joists (not any boards) straight up to the ridge",
-      "If you have loose insulation, push it aside to find the joist top",
-      "Take a photo and send it to us if you're unsure",
-    ],
-    whatItMeans: {
-      good: {
-        range: "2.4m+",
-        meaning: "Excellent—you'll have comfortable standing room throughout most of the conversion.",
-      },
-      okay: {
-        range: "2.2m - 2.4m",
-        meaning: "Workable—you'll have good headroom in the centre, sloping to the sides.",
-      },
-      challenging: {
-        range: "Under 2.2m",
-        meaning: "Difficult without a dormer. A dormer can add the height you need, but requires planning permission.",
-      },
-    },
-  },
-  roofSection: {
-    title: "Roof Shape",
-    truthBlock: "Gable roofs (with vertical triangular ends) are the most straightforward to convert. Hipped roofs (where all sides slope) need more creative solutions but are definitely doable.",
-    types: [
-      {
-        name: "Gable Roof",
-        description: "Vertical walls at each end of the house. The most common and easiest to convert.",
-        suitability: "Ideal",
-      },
-      {
-        name: "Hipped Roof",
-        description: "All four sides slope inward. Reduces usable floor space but solutions exist.",
-        suitability: "Requires solutions",
-      },
-      {
-        name: "Half-Hipped",
-        description: "A mix of both—vertical walls with partial slopes. Good conversion potential.",
-        suitability: "Good",
-      },
-    ],
-  },
-  nextStep: {
-    text: "Not sure about your measurements? Send us a few photos and we'll give you an honest assessment within 24 hours.",
-    cta: { label: "Send Photos for Assessment", href: "/contact" },
-  },
-};
-
-export const habitableVsStorage = {
-  headline: "Habitable Room vs Storage Space",
-  subheadline: "Understanding the difference affects planning, cost, and what you can do with the space.",
-  truthBlock: "A 'habitable room' meets building regulations for living in. A 'storage space' is simply usable floor area with access. The key difference is the 2.4m height requirement over 50% of the floor area.",
-  comparison: [
-    {
-      type: "Habitable Room",
-      description: "A proper living space suitable for bedrooms, offices, or living areas.",
-      requirements: [
-        "Minimum 2.4m ceiling height over 50% of floor area",
-        "Proper fixed staircase access",
-        "Full insulation and ventilation",
-        "Fire safety compliance (especially for 3+ storey homes)",
-        "Usually requires building regulations sign-off",
-      ],
-      benefits: [
-        "Adds to your home's official floor area",
-        "Counts as an extra bedroom for valuations",
-        "Full electrical and heating included",
-        "Certified for mortgage and sale purposes",
-      ],
-    },
-    {
-      type: "Storage Space",
-      description: "Accessible attic space for storage, but not officially a living area.",
-      requirements: [
-        "Basic access (ladder or basic stairs)",
-        "Boarded floor for storage",
-        "Basic lighting",
-        "No minimum ceiling height requirements",
-      ],
-      benefits: [
-        "Lower cost than full conversion",
-        "Usually no planning permission needed",
-        "Quick to complete (days, not weeks)",
-        "Can be upgraded later",
-      ],
-    },
-  ],
-  whatThisMeans: "If you want to use the space regularly—as a bedroom, office, or playroom—you need a habitable room conversion. If you just need somewhere to store boxes and suitcases, a storage conversion is simpler and cheaper.",
-  cta: { label: "Discuss Your Options", href: "/contact" },
 };
 
 export const process = {
@@ -258,7 +148,6 @@ export const process = {
         "Timeline and start date discussed",
         "Any questions answered",
       ],
-      planningNote: "Most standard conversions don't need planning permission. Dormers usually do. We'll tell you exactly what applies to your situation.",
     },
     {
       number: 3,
@@ -273,7 +162,6 @@ export const process = {
         "Staircase installation",
         "Plastering and finishing",
       ],
-      disruption: "We work cleanly and access the attic from outside where possible. Most families continue living normally during the build.",
     },
     {
       number: 4,
@@ -287,7 +175,6 @@ export const process = {
         "All paperwork provided",
         "Aftercare and warranty explained",
       ],
-      important: "The Certificate of Compliance is essential—you'll need it when selling or remortgaging your home.",
     },
   ],
   cta: { label: "Book Your Free Survey", href: "/contact" },
@@ -348,16 +235,6 @@ export const costsTimeline = {
       },
     ],
   },
-  timelineFactors: {
-    headline: "What Affects the Timeline?",
-    factors: [
-      "Planning permission (if needed, adds 8-12 weeks)",
-      "Dormer construction (adds 1-2 weeks)",
-      "En-suite plumbing (adds 3-5 days)",
-      "Complex stair locations",
-      "Weather (for external work)",
-    ],
-  },
   cta: { label: "Get Your Exact Quote", href: "/contact" },
 };
 
@@ -365,8 +242,8 @@ export const journeySteps = [
   {
     id: "suitability",
     number: 1,
-    title: "Is Your Attic Suitable?",
-    intro: "Let's start with the basics. Your attic's height and roof type determine what's possible.",
+    title: "Check Your Attic Height",
+    keyFact: "You need at least 2.2m from the top of your ceiling joists to the ridge beam for a standard conversion.",
     question: "How high is your attic at its highest point?",
     options: [
       { id: "high", label: "2.4m or more", description: "Excellent headroom" },
@@ -374,108 +251,55 @@ export const journeySteps = [
       { id: "low", label: "Under 2.2m", description: "Limited without dormer" },
       { id: "unsure", label: "I'm not sure", description: "We can help measure" },
     ],
-    truthBlock: "You need at least 2.2m from joist top to ridge. This is measured in the centre of your attic, at the highest point.",
+    moreDetails: "Measure from the top of your floor joists (not any boards) straight up to the ridge, standing in the centre of your attic. If you have loose insulation, push it aside to find the joist top.",
     whatThisMeans: {
-      high: "Great news—you have excellent headroom for a comfortable conversion with plenty of standing room throughout.",
-      medium: "Good news—this is workable. You'll have comfortable headroom in the centre, sloping at the edges.",
-      low: "A standard conversion may feel cramped, but a dormer can add the height you need. It requires planning permission but opens up possibilities.",
-      unsure: "No problem—we can assess this during a free survey, or you can send us photos and we'll give you an estimate.",
+      high: "Excellent—you'll have comfortable standing room throughout most of the conversion.",
+      medium: "Good—this is workable. You'll have good headroom in the centre, sloping at the edges.",
+      low: "A standard conversion may feel cramped, but a dormer can add the height you need (requires planning permission).",
+      unsure: "No problem—we can measure during a free survey, or send us photos for a quick estimate.",
     },
   },
   {
     id: "roof-type",
     number: 2,
-    title: "What's Your Roof Shape?",
-    intro: "Your roof shape affects both the usable floor area and the solutions we might recommend.",
+    title: "Identify Your Roof Type",
+    keyFact: "Gable roofs are simplest to convert. Hipped roofs need creative solutions but are definitely doable.",
     question: "Which best describes your roof?",
     options: [
       { id: "gable", label: "Gable (pointed ends)", description: "Vertical walls at each end" },
       { id: "hipped", label: "Hipped (all sides slope)", description: "No vertical end walls" },
       { id: "half-hipped", label: "Half-hipped", description: "Mix of both styles" },
-      { id: "unsure", label: "I'm not sure", description: "We can identify this for you" },
+      { id: "unsure", label: "I'm not sure", description: "We can identify this" },
     ],
-    truthBlock: "Gable roofs are simplest to convert. Hipped roofs reduce floor space but we have proven solutions including Dutch hips and side dormers.",
+    moreDetails: "Look at your house from outside. Gable roofs have a triangular end wall; hipped roofs slope on all four sides; half-hipped have a small slope at the top of the triangular wall.",
     whatThisMeans: {
-      gable: "Ideal for conversion. You'll get maximum floor space and the work is straightforward.",
-      hipped: "The sloping ends reduce your usable area, but solutions like Dutch hip conversions or side dormers can recover that space.",
-      "half-hipped": "A good balance—you'll have decent floor space with some options for expansion if needed.",
-      unsure: "We'll identify this during our survey. It's easy to tell from looking at your house from outside.",
+      gable: "Ideal for conversion. Maximum floor space with straightforward construction.",
+      hipped: "The sloping ends reduce your usable area, but Dutch hip or side dormer solutions can recover that space.",
+      "half-hipped": "A good balance—decent floor space with some options for expansion if needed.",
+      unsure: "We'll identify this during our survey. It's easy to tell from the outside.",
     },
   },
   {
     id: "intended-use",
     number: 3,
-    title: "What Will You Use It For?",
-    intro: "Understanding your intended use helps us recommend the right approach and features.",
-    question: "What's the primary purpose of your new space?",
+    title: "Plan Your Space",
+    keyFact: "Different uses have different requirements—an en-suite adds plumbing; a child's room needs fire-safe access.",
+    question: "What will you use your new space for?",
     options: [
       { id: "office", label: "Home Office", description: "Quiet workspace" },
       { id: "bedroom-child", label: "Child's Bedroom", description: "Playroom or bedroom" },
-      { id: "bedroom-adult", label: "Master Bedroom", description: "Main bedroom, possibly with en-suite" },
-      { id: "guest", label: "Guest Room", description: "Occasional use for visitors" },
-      { id: "multipurpose", label: "Multi-purpose", description: "Flexible space for various uses" },
+      { id: "bedroom-adult", label: "Master Bedroom", description: "With or without en-suite" },
+      { id: "guest", label: "Guest Room", description: "Occasional use" },
+      { id: "multipurpose", label: "Multi-purpose", description: "Flexible space" },
     ],
-    truthBlock: "Different uses have different requirements. An en-suite adds plumbing complexity. A children's room needs fire-safe access. A home office might need dedicated electrical circuits.",
+    moreDetails: "Consider how you'll use the space day-to-day. A home office might need dedicated electrical circuits; a bedroom suite benefits from an en-suite bathroom; children's rooms need proper fire escape routes.",
     whatThisMeans: {
-      office: "A home office benefits from good natural light, proper electrical planning for equipment, and possibly sound insulation.",
-      "bedroom-child": "Fire safety is crucial—we ensure safe escape routes. Consider built-in storage and durable finishes.",
-      "bedroom-adult": "Often combined with an en-suite. We'll plan the layout to maximise comfort and privacy.",
-      guest: "A flexible space that can double as an office or playroom when not hosting visitors.",
-      multipurpose: "We'll design with flexibility in mind—multiple power points, versatile lighting, open layout.",
+      office: "Good natural light, proper electrical planning for equipment, and possibly sound insulation.",
+      "bedroom-child": "Fire safety is crucial—we ensure safe escape routes. Consider built-in storage.",
+      "bedroom-adult": "Often combined with an en-suite. We'll plan the layout to maximise comfort.",
+      guest: "A flexible space that can double as an office or playroom when not hosting.",
+      multipurpose: "We'll design with flexibility—multiple power points, versatile lighting, open layout.",
     },
-  },
-  {
-    id: "constraints",
-    number: 4,
-    title: "Access & Constraints",
-    intro: "Where the stairs go is often the trickiest part. Let's understand your situation.",
-    question: "Where could the stairs to your attic go?",
-    options: [
-      { id: "landing", label: "From the landing", description: "Above existing stairs" },
-      { id: "bedroom", label: "Through a bedroom", description: "Requires some bedroom space" },
-      { id: "corridor", label: "New corridor needed", description: "For hipped roof access" },
-      { id: "unsure", label: "I'm not sure", description: "We'll find the best solution" },
-    ],
-    truthBlock: "The stair position affects your upstairs layout. From the landing is ideal but not always possible. Taking space from a bedroom is common and works well.",
-    whatThisMeans: {
-      landing: "The simplest solution if there's room above your existing stairs. Minimal disruption to bedrooms.",
-      bedroom: "We'll lose about 1m x 2m from a bedroom for the stairwell. We can add built-in storage around it to minimise the impact.",
-      corridor: "Common with hipped roofs where the stairs can't go straight up. We create a small corridor to reach the conversion.",
-      unsure: "This is one of the main things we assess during our survey. We'll find the best solution for your layout.",
-    },
-  },
-  {
-    id: "next-steps",
-    number: 5,
-    title: "Your Next Steps",
-    intro: "Based on your answers, here's what we recommend.",
-    summaryIntro: "Here's a summary of your attic conversion profile:",
-    nextStepsOptions: [
-      {
-        scenario: "ready",
-        title: "Ready for a Survey",
-        description: "Your attic sounds like a good candidate for conversion. The next step is a free, no-obligation survey.",
-        action: "Book a Free Survey",
-      },
-      {
-        scenario: "questions",
-        title: "Some Questions to Discuss",
-        description: "There are a few things we'd like to discuss with you before recommending the best approach.",
-        action: "Schedule a Call",
-      },
-      {
-        scenario: "challenging",
-        title: "Needs Expert Assessment",
-        description: "Your situation may need some creative solutions. Our experts can assess the possibilities.",
-        action: "Request Expert Assessment",
-      },
-    ],
-    whatToExpect: [
-      "We'll call to arrange a convenient time",
-      "The survey takes about an hour",
-      "You'll get a detailed quote within a week",
-      "No obligation—no pressure",
-    ],
   },
 ];
 
@@ -487,17 +311,14 @@ export const faqCategories = [
       {
         question: "How do I know if my attic can be converted?",
         answer: "The two main factors are ceiling height (at least 2.2m from joist top to ridge) and roof type. We offer a free survey to assess your specific situation and give you honest advice.",
-        popular: true,
       },
       {
         question: "What's the first step?",
         answer: "Simply contact us for a free, no-obligation survey. We'll visit your home, take measurements, discuss your needs, and explain your options. There's no pressure to proceed.",
-        popular: true,
       },
       {
         question: "How long does the whole process take?",
         answer: "From survey to completion, most conversions take 4-8 weeks depending on complexity. Planning permission (if needed) adds 8-12 weeks to the front of that timeline.",
-        popular: true,
       },
     ],
   },
@@ -508,7 +329,6 @@ export const faqCategories = [
       {
         question: "How much does an attic conversion cost?",
         answer: "Standard conversions typically range from €15,000-€25,000. Adding an en-suite brings it to €22,000-€35,000. Dormers range from €30,000-€50,000. We provide exact quotes after surveying your property.",
-        popular: true,
       },
       {
         question: "What's included in your quote?",
@@ -527,15 +347,10 @@ export const faqCategories = [
       {
         question: "Do I need planning permission?",
         answer: "Most standard attic conversions with Velux windows don't need planning permission. Dormers usually do. We'll tell you exactly what applies to your situation during the survey.",
-        popular: true,
       },
       {
         question: "What if my dormer needs planning permission?",
         answer: "We handle the entire planning application process for you. It typically takes 8-12 weeks. We have a high success rate and know exactly what planners look for.",
-      },
-      {
-        question: "Are there restrictions on what I can build?",
-        answer: "Yes—there are limits on the size of dormers, their position on the roof, and materials used. In some areas (conservation zones, etc.) there are additional restrictions. We'll explain all of this during your survey.",
       },
     ],
   },
@@ -546,16 +361,10 @@ export const faqCategories = [
       {
         question: "What building regulations apply?",
         answer: "Attic conversions must meet regulations for structural safety, fire safety, insulation, ventilation, and stairs. We ensure full compliance and provide all necessary certification.",
-        popular: true,
-      },
-      {
-        question: "What about fire safety for a 3-storey house?",
-        answer: "When your conversion makes your house 3 storeys, additional fire safety measures are required: fire doors, protected escape route, smoke alarms, and sometimes a mains-powered alarm system. We handle all of this.",
       },
       {
         question: "What's a Certificate of Compliance?",
         answer: "It's an official document confirming your conversion meets building regulations. You'll need this when selling or remortgaging your home. We provide this as standard.",
-        popular: true,
       },
     ],
   },
@@ -566,45 +375,18 @@ export const faqCategories = [
       {
         question: "Can we stay in the house during the work?",
         answer: "Yes, most families stay at home throughout the build. We work cleanly, access from outside where possible, and minimise disruption to your daily life.",
-        popular: true,
       },
       {
         question: "What happens to our water tank?",
-        answer: "If your water tank is in the attic, we'll relocate it. This might mean moving it to a smaller space, or upgrading to a pressurised hot water system (which actually improves your water pressure).",
-      },
-      {
-        question: "What about our TV aerial and satellite dish?",
-        answer: "We'll relocate these as needed. If the work affects signal cables, we'll run new ones. This is all included in your quote.",
+        answer: "If your water tank is in the attic, we'll relocate it. This might mean moving it to a smaller space, or upgrading to a pressurised hot water system.",
       },
       {
         question: "How will the attic be heated?",
-        answer: "We can extend your existing central heating with new radiators, or install electric heating. We'll discuss the pros and cons of each during the survey.",
-      },
-    ],
-  },
-  {
-    id: "special-cases",
-    title: "Special Situations",
-    questions: [
-      {
-        question: "Can you convert a timber frame house?",
-        answer: "Yes, but it requires a structural engineer inspection and special certification. We have extensive experience with timber frame properties and handle the additional requirements.",
-      },
-      {
-        question: "What if my roof is very old or has slates?",
-        answer: "Older roofs can be converted, but may need additional work. Original slates are often valuable and we preserve them where possible. We'll assess the condition during our survey.",
-      },
-      {
-        question: "We have a hipped roof—can it still be converted?",
-        answer: "Yes. Hipped roofs are more challenging but we have proven solutions including Dutch hip conversions and side dormers that can maximize your usable space.",
+        answer: "We can extend your existing central heating with new radiators, or install electric heating. We'll discuss the pros and cons during the survey.",
       },
     ],
   },
 ];
-
-export const popularQuestions = faqCategories
-  .flatMap(cat => cat.questions)
-  .filter(q => q.popular);
 
 export const testimonials = [
   {
@@ -670,12 +452,12 @@ export const testimonials = [
 ];
 
 export const trustBadges = [
-  { label: "30+ Years Experience", icon: "clock" },
+  { label: "Family-Run Since 1995", icon: "users" },
   { label: "1000+ Conversions", icon: "home" },
-  { label: "Family Run Since 1995", icon: "users" },
   { label: "Fully Insured", icon: "shield" },
   { label: "Building Regs Certified", icon: "check-circle" },
   { label: "Free No-Obligation Quotes", icon: "file-text" },
+  { label: "Dublin Specialists", icon: "map-pin" },
 ];
 
 export const contact = {
@@ -706,5 +488,5 @@ export const footer = {
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
   ],
-  copyright: "© 2025 Attic Conversions. All rights reserved.",
+  copyright: "© 2026 Attic Conversions. All rights reserved.",
 };
