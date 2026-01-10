@@ -7,7 +7,7 @@ interface JourneyAdviceRequest {
   keyFact?: string;
   selectedOption?: string;
   selectedOptionLabel?: string;
-  promptType: "suitability" | "planning" | "timeline" | "general";
+  promptType: "suitability" | "planning" | "general";
 }
 
 interface JourneyAdviceResponse {

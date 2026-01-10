@@ -13,7 +13,7 @@ export const journeyAdviceRequestSchema = z.object({
   keyFact: z.string().optional(),
   selectedOption: z.string().optional(),
   selectedOptionLabel: z.string().optional(),
-  promptType: z.enum(["suitability", "planning", "timeline", "general"]),
+  promptType: z.enum(["suitability", "planning", "general"]),
 });
 
 export type JourneyAdviceRequest = z.infer<typeof journeyAdviceRequestSchema>;
@@ -62,20 +62,6 @@ const FALLBACK_RESPONSES: Record<string, Record<string, JourneyAdviceResponse>> 
         "Building regulations certification is always required",
       ],
       nextQuestions: ["We handle all compliance paperwork for you"],
-    },
-  },
-  timeline: {
-    default: {
-      status: "degraded",
-      summary: "A typical attic conversion takes 3-6 weeks from start to finish, depending on complexity.",
-      details: [
-        "Simple conversions (bedroom/office): 3-4 weeks",
-        "Bathroom additions extend timeline by 1-2 weeks",
-        "Dormer installations add complexity but are often worth it",
-        "Weather rarely affects work as it's mostly internal",
-        "We work to minimise disruption to your daily life",
-      ],
-      nextQuestions: ["Get a personalised timeline with a free quote"],
     },
   },
   general: {
@@ -134,7 +120,6 @@ function buildUserPrompt(request: JourneyAdviceRequest): string {
   const prompts: Record<string, string> = {
     suitability: "Explain whether their attic is likely suitable for conversion based on their selection, and what factors matter most.",
     planning: "Explain the planning permission requirements in Ireland for attic conversions, especially relevant to their situation.",
-    timeline: "Explain typical timelines for attic conversions and factors that can affect duration.",
     general: "Provide helpful context about this stage of the attic conversion decision process.",
   };
 

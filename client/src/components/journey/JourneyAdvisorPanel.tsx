@@ -15,7 +15,6 @@ interface JourneyAdvisorPanelProps {
 const QUICK_PROMPTS = [
   { type: "suitability" as const, label: "Is my attic suitable?", icon: "🏠" },
   { type: "planning" as const, label: "Do I need planning permission?", icon: "📋" },
-  { type: "timeline" as const, label: "How long will it take?", icon: "⏱️" },
 ];
 
 export function JourneyAdvisorPanel({
@@ -32,7 +31,7 @@ export function JourneyAdvisorPanel({
   const prefersReducedMotion = typeof window !== "undefined" 
     && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const handlePromptClick = (promptType: "suitability" | "planning" | "timeline" | "general") => {
+  const handlePromptClick = (promptType: "suitability" | "planning" | "general") => {
     fetchAdvice({
       stepId,
       stepTitle,

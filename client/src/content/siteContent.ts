@@ -6,7 +6,6 @@ export const navigation = {
     { label: "Attic Journey", href: "/attic-journey" },
     { label: "Services", href: "/services" },
     { label: "Process", href: "/process" },
-    { label: "Costs & Timeline", href: "/costs-timeline" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
   ],
@@ -39,7 +38,7 @@ export const hero = {
 
 export const homeIntro = {
   headline: "Not Sure Where to Start?",
-  description: "Converting an attic can feel overwhelming. We've helped over 1,000 Dublin homeowners navigate the process. Our interactive guide walks you through everything—from checking if your attic is suitable, to understanding costs and next steps.",
+  description: "Converting an attic can feel overwhelming. We've helped over 1,000 Dublin homeowners navigate the process. Our interactive guide walks you through everything—from checking if your attic is suitable to exploring your options.",
   steps: [
     {
       number: "1",
@@ -73,7 +72,6 @@ export const services = {
         "Velux roof windows for natural light",
         "Proper insulation and ventilation",
         "Building regulations compliant",
-        "Typical timeline: 3-4 weeks",
       ],
       idealFor: "Home offices, children's bedrooms, guest rooms",
     },
@@ -86,7 +84,6 @@ export const services = {
         "Vertical windows for better views",
         "Usually requires planning permission",
         "Ideal for hipped roof houses",
-        "Typical timeline: 4-6 weeks",
       ],
       idealFor: "Master bedrooms with en-suite, larger living spaces",
     },
@@ -133,7 +130,7 @@ export const process = {
         "Check roof structure and type",
         "Discuss what you want to use the space for",
         "Identify any potential challenges",
-        "Talk through options and rough costs",
+        "Talk through your options",
       ],
     },
     {
@@ -178,75 +175,6 @@ export const process = {
     },
   ],
   cta: { label: "Book Your Free Survey", href: "/contact" },
-};
-
-export const costsTimeline = {
-  headline: "Costs & Timeline",
-  subheadline: "Honest guidance on what to expect. Every project is different, but here's a realistic starting point.",
-  costDisclaimer: "These are guide prices only. Your actual cost depends on your specific requirements, roof type, and finish level. We provide exact quotes after surveying your property.",
-  costRanges: [
-    {
-      type: "Storage Conversion",
-      range: "€3,000 - €6,000",
-      includes: ["Boarding", "Basic access", "Lighting"],
-      timeline: "2-5 days",
-    },
-    {
-      type: "Standard Conversion",
-      range: "€15,000 - €25,000",
-      includes: ["Full room conversion", "Velux windows", "Stairs", "Electrics", "Insulation"],
-      timeline: "3-4 weeks",
-    },
-    {
-      type: "Conversion with En-Suite",
-      range: "€22,000 - €35,000",
-      includes: ["Everything in standard", "Full bathroom or shower room", "Plumbing"],
-      timeline: "4-5 weeks",
-    },
-    {
-      type: "Dormer Conversion",
-      range: "€30,000 - €50,000",
-      includes: ["Dormer structure", "Maximum floor space", "Full room fit-out"],
-      timeline: "5-7 weeks",
-    },
-  ],
-  costFactors: {
-    headline: "What Affects the Cost?",
-    factors: [
-      {
-        factor: "Roof Type",
-        explanation: "Hipped roofs need more work than gable roofs. Dormers add significant cost.",
-      },
-      {
-        factor: "Size & Layout",
-        explanation: "Larger attics and complex layouts take more time and materials.",
-      },
-      {
-        factor: "Access",
-        explanation: "Where the stairs go affects structural work. Some locations are simpler than others.",
-      },
-      {
-        factor: "Finish Level",
-        explanation: "Basic functional vs premium finishes. We work to your budget.",
-      },
-      {
-        factor: "Existing Conditions",
-        explanation: "Old roofs, water tanks to relocate, or electrical upgrades add to the work.",
-      },
-    ],
-  },
-  timelineFactors: {
-    headline: "What Affects the Timeline?",
-    factors: [
-      "Property access and working conditions",
-      "Structural complexity of your roof",
-      "Whether planning permission is needed",
-      "Scope of plumbing and electrical work",
-      "Weather conditions during construction",
-      "Availability of materials",
-    ],
-  },
-  cta: { label: "Get Your Exact Quote", href: "/contact" },
 };
 
 export const journeySteps = [
