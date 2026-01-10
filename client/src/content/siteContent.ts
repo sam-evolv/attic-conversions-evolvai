@@ -255,28 +255,6 @@ export const faqCategories = [
         question: "What's the first step?",
         answer: "Simply contact us for a free, no-obligation survey. We'll visit your home, take measurements, discuss your needs, and explain your options. There's no pressure to proceed.",
       },
-      {
-        question: "How long does the whole process take?",
-        answer: "From survey to completion, most conversions take 4-8 weeks depending on complexity. Planning permission (if needed) adds 8-12 weeks to the front of that timeline.",
-      },
-    ],
-  },
-  {
-    id: "costs",
-    title: "Costs & Quotes",
-    questions: [
-      {
-        question: "How much does an attic conversion cost?",
-        answer: "Standard conversions typically range from €15,000-€25,000. Adding an en-suite brings it to €22,000-€35,000. Dormers range from €30,000-€50,000. We provide exact quotes after surveying your property.",
-      },
-      {
-        question: "What's included in your quote?",
-        answer: "Everything needed for a complete, certified conversion: structural work, insulation, electrics, stairs, windows, plastering, and all finishes. We'll clearly list what's included and any optional extras.",
-      },
-      {
-        question: "Do you offer payment plans?",
-        answer: "We typically take a deposit to secure your booking, with the balance due on completion. We can discuss payment staging for larger projects.",
-      },
     ],
   },
   {
@@ -289,7 +267,7 @@ export const faqCategories = [
       },
       {
         question: "What if my dormer needs planning permission?",
-        answer: "We handle the entire planning application process for you. It typically takes 8-12 weeks. We have a high success rate and know exactly what planners look for.",
+        answer: "We handle the entire planning application process for you. We have a high success rate and know exactly what planners look for.",
       },
     ],
   },
