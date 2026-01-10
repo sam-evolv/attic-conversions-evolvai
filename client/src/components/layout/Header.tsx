@@ -57,22 +57,6 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-4 flex-shrink-0">
-              <a
-                href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
-                className="hidden md:flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors focus-ring rounded px-2 py-1"
-                data-testid="header-phone"
-              >
-                <Phone className="w-4 h-4 text-primary" />
-                <span>{companyInfo.phone}</span>
-              </a>
-              <a
-                href={`mailto:${companyInfo.email}`}
-                className="hidden xl:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors focus-ring rounded px-2 py-1"
-                data-testid="header-email"
-              >
-                <Mail className="w-4 h-4" />
-                <span>{companyInfo.email}</span>
-              </a>
               <Link href={navigation.cta.href}>
                 <Button className="hidden sm:flex btn-primary h-11 px-6 text-sm" data-testid="header-cta">
                   {navigation.cta.label}
