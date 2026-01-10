@@ -1,87 +1,64 @@
 import { Link } from "wouter";
-import { ArrowRight, Home, Shield, Award, Users } from "lucide-react";
+import { ArrowRight, Users, Home, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted" />
-        <svg
-          className="absolute inset-0 w-full h-full opacity-[0.035]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern id="roof-pattern" x="0" y="0" width="100" height="70" patternUnits="userSpaceOnUse">
-              <path
-                d="M0 70 L50 20 L100 70"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                className="text-foreground"
-              />
-              <path
-                d="M15 70 L50 30 L85 70"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.5"
-                className="text-foreground"
-              />
-              <line x1="50" y1="20" x2="50" y2="70" stroke="currentColor" strokeWidth="0.5" className="text-foreground" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#roof-pattern)" />
-        </svg>
-      </div>
-
+    <section className="relative min-h-[95vh] flex items-center overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 hero-overlay" aria-hidden="true" />
+      
       <div className="container-wide relative z-10 py-20 lg:py-28">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold text-foreground leading-[1.12] mb-8 animate-slide-up">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.1] mb-8 animate-slide-up text-shadow-soft">
             Transform Your Attic Into Beautiful, Functional Space
           </h1>
           
-          <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto animate-slide-up stagger-1">
-            Family-run specialists with over 30 years' experience delivering certified attic conversions across Dublin.
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto animate-slide-up stagger-1">
+            Family-run specialists since 1995 delivering over 1,000 certified attic conversions across Ireland.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10 animate-slide-up stagger-2">
+          <div className="flex flex-col sm:flex-row justify-center gap-5 mb-14 animate-slide-up stagger-2">
             <Link href="/contact">
-              <Button size="lg" className="w-full sm:w-auto btn-primary text-base h-14 px-8" data-testid="hero-primary-cta">
+              <Button size="lg" className="w-full sm:w-auto btn-primary text-lg h-16 px-10" data-testid="hero-primary-cta">
                 Get a Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-3 w-5 h-5" />
               </Button>
             </Link>
-            <Link href="/attic-journey">
+            <Link href="/process">
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto btn-secondary text-base h-14 px-8"
+                className="w-full sm:w-auto btn-secondary text-lg h-16 px-10"
                 data-testid="hero-secondary-cta"
               >
-                Start Attic Journey
+                View Our Process
               </Button>
             </Link>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-sm text-muted-foreground animate-slide-up stagger-3">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-4 animate-slide-up stagger-3">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm">
               <Users className="w-4 h-4 text-primary" />
-              <span>Family-Run Since 1995</span>
+              <span className="text-sm font-medium text-foreground">Family-run since 1995</span>
             </div>
-            <span className="hidden sm:inline text-border">•</span>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm">
               <Home className="w-4 h-4 text-primary" />
-              <span>1,000+ Conversions</span>
+              <span className="text-sm font-medium text-foreground">1,000+ conversions</span>
             </div>
-            <span className="hidden sm:inline text-border">•</span>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm">
               <Shield className="w-4 h-4 text-primary" />
-              <span>Fully Insured</span>
+              <span className="text-sm font-medium text-foreground">Fully insured</span>
             </div>
-            <span className="hidden sm:inline text-border">•</span>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm">
               <Award className="w-4 h-4 text-primary" />
-              <span>Certified Compliance</span>
+              <span className="text-sm font-medium text-foreground">Certified compliance</span>
             </div>
           </div>
         </div>

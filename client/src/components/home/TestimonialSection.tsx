@@ -4,7 +4,7 @@ import { testimonials } from "@/content/siteContent";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 
-const VISIBLE_TESTIMONIALS = testimonials?.slice(0, 9) || [];
+const VISIBLE_TESTIMONIALS = testimonials || [];
 
 export function TestimonialSection() {
   const [current, setCurrent] = useState(0);
@@ -12,7 +12,8 @@ export function TestimonialSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
 
-  const totalSlides = Math.ceil(VISIBLE_TESTIMONIALS.length / 3);
+  const cardsPerView = 3;
+  const totalSlides = Math.ceil(VISIBLE_TESTIMONIALS.length / cardsPerView);
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % totalSlides);
@@ -24,7 +25,7 @@ export function TestimonialSection() {
 
   useEffect(() => {
     if (isPaused || VISIBLE_TESTIMONIALS.length === 0) return;
-    const interval = setInterval(next, 5000);
+    const interval = setInterval(next, 6000);
     return () => clearInterval(interval);
   }, [isPaused, next]);
 
@@ -40,29 +41,27 @@ export function TestimonialSection() {
   };
 
   const getVisibleTestimonials = () => {
-    const start = current * 3;
-    return VISIBLE_TESTIMONIALS.slice(start, start + 3);
+    const start = current * cardsPerView;
+    return VISIBLE_TESTIMONIALS.slice(start, start + cardsPerView);
   };
 
-  if (VISIBLE_TESTIMONIALS.length === 0) {
-    return null;
-  }
+  if (VISIBLE_TESTIMONIALS.length === 0) return null;
 
   return (
-    <Section background="muted">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-3">
+    <Section background="default" className="overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-muted-foreground">
-            Real feedback from Dublin homeowners.
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            Real feedback from homeowners across Dublin who trusted us with their attic conversion.
           </p>
         </div>
 
         <div
           ref={containerRef}
-          className="grid md:grid-cols-3 gap-5 mb-8"
+          className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-10"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
@@ -73,18 +72,19 @@ export function TestimonialSection() {
           {getVisibleTestimonials().map((testimonial, index) => (
             <article
               key={`${current}-${index}`}
-              className="card-refined p-6 animate-fade-in"
+              className="card-float p-7 lg:p-8 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <Quote className="w-7 h-7 text-primary/20 mb-4" aria-hidden="true" />
-              <blockquote className="text-foreground text-sm leading-relaxed mb-5 line-clamp-3">
+              <Quote className="w-10 h-10 text-primary/15 mb-5" aria-hidden="true" />
+              <blockquote className="text-foreground text-base leading-relaxed mb-6">
                 "{testimonial.quote}"
               </blockquote>
-              <footer className="border-t border-border pt-4">
+              <footer className="border-t border-gray-100 pt-5">
                 <cite className="not-italic">
-                  <p className="font-semibold text-sm text-foreground">
+                  <p className="font-semibold text-foreground">
                     {testimonial.author}
                   </p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-sm text-muted-foreground mt-0.5">
                     {testimonial.location}
                   </p>
                 </cite>
@@ -93,19 +93,19 @@ export function TestimonialSection() {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-6">
           <Button
             variant="outline"
             size="icon"
             onClick={prev}
-            className="bg-white h-10 w-10 rounded-full"
+            className="bg-white h-12 w-12 rounded-full shadow-md hover:shadow-lg transition-shadow"
             data-testid="testimonial-prev"
             aria-label="Previous testimonials"
           >
             <ChevronLeft className="w-5 h-5" />
           </Button>
           
-          <div className="flex gap-2" role="tablist">
+          <div className="flex gap-2.5" role="tablist">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <button
                 key={index}
@@ -123,7 +123,7 @@ export function TestimonialSection() {
             variant="outline"
             size="icon"
             onClick={next}
-            className="bg-white h-10 w-10 rounded-full"
+            className="bg-white h-12 w-12 rounded-full shadow-md hover:shadow-lg transition-shadow"
             data-testid="testimonial-next"
             aria-label="Next testimonials"
           >

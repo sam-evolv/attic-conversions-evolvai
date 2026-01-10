@@ -17,14 +17,14 @@ export function Section({
   id,
 }: SectionProps) {
   const bgClasses = {
-    default: "bg-background",
-    muted: "bg-muted/50",
-    accent: "bg-accent/30",
+    default: "bg-[#FAF8F6]",
+    muted: "bg-[#F7F5F2]",
+    accent: "bg-primary/5",
   };
 
   const containerClasses = {
     wide: "container-wide",
-    narrow: "container-narrow",
+    narrow: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8",
   };
 
   return (
