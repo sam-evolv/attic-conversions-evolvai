@@ -2,33 +2,19 @@ import { Link } from "wouter";
 import { footer, companyInfo } from "@/content/siteContent";
 import { Phone, Mail, MapPin, Facebook, Linkedin, ExternalLink } from "lucide-react";
 
-function LogoMark({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 44 44" className={className} aria-label="Attic Conversions">
-      <g fill="none">
-        <path d="M4 40 L22 8 L40 40" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M11 32 L22 14 L33 32" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <line x1="22" y1="14" x2="22" y2="40" stroke="currentColor" strokeWidth="2"/>
-      </g>
-    </svg>
-  );
-}
-
 export function Footer() {
   return (
     <footer className="bg-[#1F1F1F] text-white py-20" role="contentinfo">
       <div className="container-wide">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-4 mb-5">
-              <LogoMark className="w-11 h-11 text-white/70" />
-              <div>
-                <span className="text-xl font-serif font-semibold block">
-                  Attic Conversions
-                </span>
-                <span className="text-sm text-white/50">Family-run since 1995</span>
-              </div>
-            </div>
+            <Link href="/" className="inline-block mb-5 logo-hover">
+              <img 
+                src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_03_57_54_PM_1768060725644.png" 
+                alt="Attic Conversions" 
+                className="h-16 w-auto object-contain brightness-0 invert opacity-90"
+              />
+            </Link>
             <p className="text-white/60 mb-6 max-w-sm text-sm leading-relaxed">
               {footer.tagline}
             </p>

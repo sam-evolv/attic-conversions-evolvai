@@ -305,6 +305,21 @@
   outline-offset: 2px;
 }
 
+.logo-hover {
+  transition: transform 200ms ease-out, filter 200ms ease-out;
+}
+
+.logo-hover:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05) drop-shadow(0 2px 8px rgba(153, 1, 1, 0.15));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-hover:hover {
+    transform: none;
+  }
+}
+
 .dot-indicator {
   width: 10px;
   height: 10px;

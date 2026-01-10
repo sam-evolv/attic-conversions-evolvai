@@ -1,21 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
-import { navigation } from "@/content/siteContent";
+import { navigation } from "@/content/siteContent"
 import { Button } from "@/components/ui/button";
-
-function Logo({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 200 44" className={className} aria-label="Attic Conversions">
-      <g fill="none">
-        <path d="M4 40 L22 8 L40 40" stroke="#990101" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M11 32 L22 14 L33 32" stroke="#990101" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <line x1="22" y1="14" x2="22" y2="40" stroke="#990101" strokeWidth="2"/>
-      </g>
-      <text x="50" y="30" fontFamily="Georgia, 'Playfair Display', serif" fontSize="20" fontWeight="600" fill="#1F1F1F">Attic Conversions</text>
-    </svg>
-  );
-}
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,8 +26,12 @@ export function Header() {
       >
         <div className="container-wide">
           <div className="flex items-center justify-between h-20">
-            <Link href="/" className="flex-shrink-0 focus-ring rounded" data-testid="logo">
-              <Logo className="h-10 w-auto" />
+            <Link href="/" className="flex-shrink-0 focus-ring rounded logo-hover" data-testid="logo">
+              <img 
+                src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_03_57_54_PM_1768060725644.png" 
+                alt="Attic Conversions" 
+                className="h-12 w-auto object-contain"
+              />
             </Link>
 
             <nav className="hidden lg:flex items-center justify-center flex-1 gap-1 mx-8" role="navigation">
