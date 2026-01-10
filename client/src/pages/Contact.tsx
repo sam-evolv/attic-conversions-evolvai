@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle, ExternalLink } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { contact } from "@/content/siteContent";
+import { contact, companyInfo } from "@/content/siteContent";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -36,8 +36,8 @@ export default function Contact() {
               </h2>
               <div className="space-y-4">
                 <a
-                  href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                  href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
+                  className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors card-shadow-hover"
                   data-testid="contact-phone"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -45,13 +45,13 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="font-medium">{contact.phone}</p>
+                    <p className="font-medium">{companyInfo.phone}</p>
                   </div>
                 </a>
 
                 <a
-                  href={`mailto:${contact.email}`}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                  href={`mailto:${companyInfo.email}`}
+                  className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors card-shadow-hover"
                   data-testid="contact-email"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -59,7 +59,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">{contact.email}</p>
+                    <p className="font-medium">{companyInfo.email}</p>
                   </div>
                 </a>
 
@@ -69,7 +69,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="font-medium">{contact.address}</p>
+                    <p className="font-medium">{companyInfo.address}</p>
                   </div>
                 </div>
 
@@ -79,13 +79,25 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Hours</p>
-                    <p className="font-medium text-sm">{contact.hours}</p>
+                    <p className="font-medium text-sm">{companyInfo.hours}</p>
                   </div>
                 </div>
               </div>
+
+              <div className="mt-6 pt-6 border-t border-border">
+                <a
+                  href={companyInfo.trustedPeople}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <span>View our TrustedPeople profile</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
             </div>
 
-            <div className="bg-accent/30 rounded-xl p-6 border border-accent">
+            <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
               <h3 className="font-semibold mb-2">Free No-Obligation Survey</h3>
               <p className="text-sm text-muted-foreground">
                 We'll visit your home, assess your attic, and give you honest
@@ -97,8 +109,8 @@ export default function Contact() {
           <div className="bg-card rounded-xl border border-border card-shadow p-6 sm:p-8">
             {submitted ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-8 h-8 text-secondary" />
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="w-8 h-8 text-green-600" />
                 </div>
                 <h2 className="text-2xl font-serif font-semibold mb-2">
                   Thank You!
@@ -168,7 +180,7 @@ export default function Contact() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" data-testid="submit-button">
+                  <Button type="submit" className="w-full btn-lift" data-testid="submit-button">
                     {contact.submitButton}
                   </Button>
                 </form>

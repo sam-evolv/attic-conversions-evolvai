@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { journeySteps, contact } from "@/content/siteContent";
+import { journeySteps, companyInfo } from "@/content/siteContent";
 
 interface JourneySummaryProps {
   selections: Record<string, string>;
@@ -46,7 +46,7 @@ export function JourneySummary({ selections }: JourneySummaryProps) {
         <div className="space-y-3">
           {Object.entries(selections).map(([stepId, optionId]) => (
             <div key={stepId} className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-secondary mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
               <div>
                 <span className="text-sm text-muted-foreground">
                   {journeySteps.find((s) => s.id === stepId)?.title}:
@@ -63,9 +63,9 @@ export function JourneySummary({ selections }: JourneySummaryProps) {
       <div
         className={`rounded-xl p-6 mb-8 border ${
           scenario === "ready"
-            ? "bg-secondary/10 border-secondary/30"
+            ? "bg-green-50 border-green-200"
             : scenario === "questions"
-            ? "bg-primary/10 border-primary/30"
+            ? "bg-primary/5 border-primary/20"
             : "bg-accent border-accent"
         }`}
       >
@@ -80,7 +80,7 @@ export function JourneySummary({ selections }: JourneySummaryProps) {
         <ul className="space-y-2">
           {journeySteps[4].whatToExpect?.map((item, index) => (
             <li key={index} className="flex items-center gap-3 text-sm text-muted-foreground">
-              <CheckCircle className="w-4 h-4 text-secondary" />
+              <CheckCircle className="w-4 h-4 text-primary" />
               {item}
             </li>
           ))}
@@ -89,15 +89,15 @@ export function JourneySummary({ selections }: JourneySummaryProps) {
 
       <div className="flex flex-col sm:flex-row gap-4">
         <Link href="/contact" className="flex-1">
-          <Button size="lg" className="w-full group" data-testid="summary-contact">
+          <Button size="lg" className="w-full btn-lift" data-testid="summary-contact">
             {nextStepInfo?.action || "Book Free Survey"}
-            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </Link>
-        <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="flex-1">
+        <a href={`tel:${companyInfo.phone.replace(/\s/g, '')}`} className="flex-1">
           <Button size="lg" variant="outline" className="w-full" data-testid="summary-phone">
             <Phone className="mr-2 w-4 h-4" />
-            Call {contact.phone}
+            Call {companyInfo.phone}
           </Button>
         </a>
       </div>

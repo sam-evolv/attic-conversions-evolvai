@@ -13,7 +13,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function TrustBar() {
   return (
-    <Section background="muted" className="!py-12">
+    <Section background="default" className="!py-12 border-b border-border">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         {trustBadges.map((badge, index) => {
           const Icon = iconMap[badge.icon] || CheckCircle;
@@ -23,8 +23,8 @@ export function TrustBar() {
               className="flex flex-col items-center text-center gap-3"
               data-testid={`trust-bar-badge-${index}`}
             >
-              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
-                <Icon className="w-5 h-5 text-secondary" />
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <Icon className="w-5 h-5 text-primary" />
               </div>
               <span className="text-sm font-medium text-foreground">
                 {badge.label}

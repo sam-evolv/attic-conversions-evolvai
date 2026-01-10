@@ -1,0 +1,150 @@
+Brand name
+
+Replace all instances of “Dublin Attic Conversions” with “Attic Conversions” (page titles, header logo lockup, metadata/SEO, footer copyright).
+
+Palette
+
+Remove the amber/yellow entirely.
+
+Primary brand system should be white + brand red + charcoal/near-black text.
+
+You asked for the exact red from the logo. I can’t reliably extract the hex without the actual logo file contents in this chat. Fastest path:
+
+Use a color picker on the logo (Figma/Photoshop/Chrome picker) and set that as --brand.
+
+Until you paste the hex, use a safe placeholder like #D0021B (replace once confirmed).
+
+Global contact visibility
+
+Put 086 317 5893 in the header (click-to-call) and in the footer.
+
+Put info@atticconversions.ie
+ in header and footer.
+
+Add a sticky “Get a Quote” CTA in header (desktop) + bottom sticky bar (mobile).
+
+2) Header + navigation (make it feel “alive”)
+
+Implement a two-row header:
+
+Top utility bar (thin): phone, email, “Anytime”, plus trust link (e.g., TrustedPeople).
+
+Main nav: logo left, nav links, primary CTA button right.
+
+Add interaction polish:
+
+Sticky header with subtle shadow on scroll.
+
+Nav hover underline animation.
+
+CTA button with hover lift + active press + focus ring.
+
+3) Hero needs a visual anchor (right now it’s too flat)
+
+You need one strong element:
+
+Option A (fast): hero background image (attic conversion interior) with a soft white overlay for readability.
+
+Option B (premium): split hero (left copy + CTAs, right “project card” showing a before/after or a 3-step journey).
+
+Hero content structure that converts:
+
+H1: “Transform Your Attic Into Beautiful, Functional Space”
+
+Subhead: “Family-run specialists with 30+ years’ experience delivering certified attic conversions across Dublin.”
+
+CTAs: Get a Quote (primary red) + Call 086 317 5893 (secondary outline)
+
+Trust row: “30+ years”, “Fully insured”, “Building regs certified”, “1000+ conversions”
+
+4) Buttons and cards must “pop”
+
+Buttons
+
+Primary: brand red background, white text.
+
+Hover: slightly darker red + subtle lift.
+
+Active: press down (translateY + reduce shadow).
+
+Focus: visible ring (accessibility).
+
+Cards
+
+Default: clean white, soft border.
+
+Hover: increased shadow + slight translate.
+
+Add micro-details: icon badge, subtle divider lines, consistent spacing.
+
+This is the difference between “template” and “premium”.
+
+5) Testimonials: more volume + auto-loop carousel
+
+You’re right: 4 testimonials is weak. The source site content you provided includes many. Build a proper testimonial module:
+
+Carousel: auto-advance every ~5–7s, infinite loop.
+
+Pause on hover + manual arrows + swipe on mobile.
+
+Each card: quote, name, area (Lucan/Swords/etc.).
+
+Add a “Read all testimonials” link.
+
+Ready-to-use testimonial dataset (pulling from the content you already have)
+
+Use this as your initial testimonials array (you can add more later):
+
+“Your team was one of the most professional group of people we have seen so far. The pace and quality of work was so well managed.” — Ruby & Vijay, Lucan
+
+“Jenny and I were extremely happy with the level of professional shown by your team and we are delighted with the results.” — Peter Burke, Swords
+
+“The attic conversion was fantastic, and I must thank Martin and his team for their excellent work.” — Tom Kiely, Dundrum
+
+“Everyone we have shown off our attic to are amazed with the high standard of finish and layout.” — Marie & Damien Baxter, Sandyford
+
+“Everything went well for us and we are really pleased with the attic.” — Margaret O’Connor, Ranelagh
+
+“We were delighted with the professionalism of the builders who completed the attic in a clean and timely manner.” — Mark, Seagrange, Baldoyle
+
+“Definitely whenever anyone asks about attic conversions I always mention you guys and would have no problem recommending you.” — Damien, Riverwood, Dublin 15
+
+“Once again, many thanks for your professionalism and the courtesy of your team throughout the project.” — Robert McConkey, Goatstown
+
+“From initial consultation, to planning, build and certification it was a smooth and stress-free experience.” — Hilary Woods
+
+“Thank you so much for my wonderful attic conversion. It has transformed my house and will be such a useful addition to my home.” — Jackie Ruddock, Merrion Park
+
+“We cannot believe the space we got in the attic! We would strongly recommend CHI Attics for a high quality attic conversion.” — Fiona Drumm
+
+“Positive, Professionalism, Quality, Responsiveness. Everything went to schedule, and the quality of the work is solid.” — Cian Cullinan
+
+That alone fixes the “thin trust” problem.
+
+6) Ensure all the company info is actually on-site
+
+Minimum footer should include:
+
+Company name: CHI Attics / Attic Conversions (keep consistent with how you want the brand presented)
+
+Contact: 086 317 5893, info@atticconversions.ie
+
+Address block (Howth address from the source content)
+
+Social links (Facebook, LinkedIn)
+
+TrustedPeople link
+
+7) Implementation sequence (highest ROI first)
+
+Rename + palette swap (kill yellow)
+
+Header with phone/email + sticky CTA
+
+Hero visual upgrade (image/split layout)
+
+Button/card motion + elevation polish
+
+Testimonials carousel with 10–15 quotes auto-loop
+
+Footer completeness + contact redundancy

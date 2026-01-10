@@ -1,5 +1,5 @@
 export const navigation = {
-  logo: "Dublin Attic Conversions",
+  logo: "Attic Conversions",
   tagline: "Family-Run Since 1995",
   items: [
     { label: "Home", href: "/" },
@@ -13,15 +13,26 @@ export const navigation = {
   cta: { label: "Get a Quote", href: "/contact" },
 };
 
+export const companyInfo = {
+  phone: "086 317 5893",
+  email: "info@atticconversions.ie",
+  address: "Howth, Co. Dublin",
+  hours: "Monday - Friday: 8am - 6pm, Saturday: 9am - 1pm",
+  availability: "Available Anytime",
+  facebook: "https://facebook.com/atticconversions",
+  linkedin: "https://linkedin.com/company/atticconversions",
+  trustedPeople: "https://www.trustedpeople.ie",
+};
+
 export const hero = {
-  headline: "Transform Your Attic Into Something Beautiful",
-  subheadline: "Dublin's trusted family-run specialists with 30+ years of experience turning unused spaces into stunning, functional rooms.",
-  primaryCta: { label: "Start Your Journey", href: "/attic-journey" },
-  secondaryCta: { label: "Get a Free Quote", href: "/contact" },
+  headline: "Transform Your Attic Into Beautiful, Functional Space",
+  subheadline: "Family-run specialists with 30+ years' experience delivering certified attic conversions across Dublin.",
+  primaryCta: { label: "Get a Quote", href: "/contact" },
+  secondaryCta: { label: "Call 086 317 5893", href: "tel:0863175893" },
   trustBadges: [
     "30+ Years Experience",
-    "Family Run",
-    "Fully Certified",
+    "Fully Insured",
+    "Building Regs Certified",
     "1000+ Conversions",
   ],
 };
@@ -597,28 +608,64 @@ export const popularQuestions = faqCategories
 
 export const testimonials = [
   {
-    quote: "They transformed our cramped attic into a beautiful master bedroom with en-suite. The attention to detail was exceptional, and they kept us informed throughout. Couldn't be happier.",
-    author: "Sarah & Michael",
-    location: "Blackrock, Dublin",
-    project: "Master Bedroom with En-Suite",
+    quote: "Your team was one of the most professional group of people we have seen so far. The pace and quality of work was so well managed.",
+    author: "Ruby & Vijay",
+    location: "Lucan",
   },
   {
-    quote: "Professional from start to finish. They managed the planning permission, kept to the timeline, and the quality of work was outstanding. Our home office is now the best room in the house.",
-    author: "David O'Brien",
-    location: "Malahide, Dublin",
-    project: "Home Office Conversion",
+    quote: "Jenny and I were extremely happy with the level of professional shown by your team and we are delighted with the results.",
+    author: "Peter Burke",
+    location: "Swords",
   },
   {
-    quote: "We were nervous about the disruption but they were incredibly considerate. The kids hardly noticed! Now we have two extra bedrooms and the value of our home has increased significantly.",
-    author: "The Murphy Family",
-    location: "Stillorgan, Dublin",
-    project: "Two-Bedroom Conversion",
+    quote: "The attic conversion was fantastic, and I must thank Martin and his team for their excellent work.",
+    author: "Tom Kiely",
+    location: "Dundrum",
   },
   {
-    quote: "Third-generation family business and it shows in their workmanship. They solved a tricky hipped roof situation with a Dutch hip conversion. Creative, skilled, trustworthy.",
-    author: "Catherine Walsh",
-    location: "Clontarf, Dublin",
-    project: "Dutch Hip Conversion",
+    quote: "Everyone we have shown off our attic to are amazed with the high standard of finish and layout.",
+    author: "Marie & Damien Baxter",
+    location: "Sandyford",
+  },
+  {
+    quote: "Everything went well for us and we are really pleased with the attic.",
+    author: "Margaret O'Connor",
+    location: "Ranelagh",
+  },
+  {
+    quote: "We were delighted with the professionalism of the builders who completed the attic in a clean and timely manner.",
+    author: "Mark",
+    location: "Seagrange, Baldoyle",
+  },
+  {
+    quote: "Definitely whenever anyone asks about attic conversions I always mention you guys and would have no problem recommending you.",
+    author: "Damien",
+    location: "Riverwood, Dublin 15",
+  },
+  {
+    quote: "Once again, many thanks for your professionalism and the courtesy of your team throughout the project.",
+    author: "Robert McConkey",
+    location: "Goatstown",
+  },
+  {
+    quote: "From initial consultation, to planning, build and certification it was a smooth and stress-free experience.",
+    author: "Hilary Woods",
+    location: "Dublin",
+  },
+  {
+    quote: "Thank you so much for my wonderful attic conversion. It has transformed my house and will be such a useful addition to my home.",
+    author: "Jackie Ruddock",
+    location: "Merrion Park",
+  },
+  {
+    quote: "We cannot believe the space we got in the attic! We would strongly recommend CHI Attics for a high quality attic conversion.",
+    author: "Fiona Drumm",
+    location: "Dublin",
+  },
+  {
+    quote: "Positive, Professionalism, Quality, Responsiveness. Everything went to schedule, and the quality of the work is solid.",
+    author: "Cian Cullinan",
+    location: "Dublin",
   },
 ];
 
@@ -634,9 +681,9 @@ export const trustBadges = [
 export const contact = {
   headline: "Get In Touch",
   subheadline: "Ready to explore your attic's potential? We'd love to hear from you.",
-  phone: "01 XXX XXXX",
-  email: "info@dublinatticconversions.ie",
-  address: "Dublin, Ireland",
+  phone: "086 317 5893",
+  email: "info@atticconversions.ie",
+  address: "Howth, Co. Dublin",
   hours: "Monday - Friday: 8am - 6pm, Saturday: 9am - 1pm",
   formIntro: "Fill in the form below and we'll get back to you within 24 hours.",
   formFields: {
@@ -659,5 +706,5 @@ export const footer = {
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
   ],
-  copyright: "© 2025 Dublin Attic Conversions. All rights reserved.",
+  copyright: "© 2025 Attic Conversions. All rights reserved.",
 };
