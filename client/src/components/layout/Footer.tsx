@@ -10,7 +10,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-5 logo-hover">
               <img 
-                src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_04_55_11_PM_1768064127781.png" 
+                src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_05_50_33_PM_1768069492587.png" 
                 alt="Attic Conversions" 
                 className="h-16 w-auto object-contain"
               />
