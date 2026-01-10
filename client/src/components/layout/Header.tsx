@@ -31,7 +31,7 @@ export function Header() {
               <img 
                 src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_04_55_11_PM_1768064127781.png" 
                 alt="Attic Conversions" 
-                className="h-14 w-auto object-contain"
+                className="h-[4.65rem] w-auto object-contain"
               />
             </Link>
 
