@@ -1,0 +1,143 @@
+Bring the header, hero, and branding implementation to a best-in-class, production-ready standard. Eliminate visual inconsistencies, tighten alignment, and ensure behavior matches modern premium SaaS / high-end service websites.
+
+Scope of Work
+1. Header / Toolbar Behavior (Critical)
+
+Implement the following behavior exactly:
+
+Header is fully transparent when:
+
+Page is at scroll position 0
+
+Header is visually integrated with the hero image
+
+Header transitions to solid white background when:
+
+User scrolls down even slightly (e.g. >10px)
+
+Transition must be:
+
+Smooth (200–300ms ease)
+
+No layout shift
+
+No flicker on load
+
+Header must remain:
+
+Fixed/sticky
+
+Properly padded so content below never jumps
+
+Text/logo contrast must adapt correctly:
+
+Transparent state → white/light text if needed
+
+White state → dark text
+
+Acceptance check:
+At the very top, the hero image visually reaches the top of the viewport with no visible bar. On scroll, the white toolbar fades in cleanly.
+
+2. Hero Section (Polish Pass)
+
+Hero image must:
+
+Be full-width
+
+Be vertically and horizontally centered
+
+Use background-size: cover
+
+Maintain correct focal point on mobile
+
+Overlay must:
+
+Preserve readability
+
+Not dull the image unnecessarily
+
+Headline + CTAs:
+
+Perfect vertical centering
+
+No clipping on mobile
+
+CTA buttons remain visually dominant
+
+3. Logo Implementation (Exactness Required)
+
+Use the final corrected TTIC / atticconversions.ie / CHI Attics logo
+
+Logo requirements:
+
+Transparent background
+
+No extra filler, padding, boxes, or background shapes
+
+Exact same visual footprint in header and footer
+
+Aspect ratio preserved
+
+Alignment:
+
+Logo baseline aligns cleanly with nav items
+
+No vertical misalignment at any breakpoint
+
+4. Logo Hover Interaction (Premium, Subtle)
+
+On hover:
+
+Slight lift (≈ translateY(-1px))
+
+Very subtle glow or contrast increase
+
+Transition:
+
+~200ms, ease-out
+
+Respect prefers-reduced-motion
+
+No gimmicks. This should feel expensive, not animated.
+
+5. Responsiveness & QA
+
+Validate and fix if needed:
+
+Desktop (1440px+)
+
+Laptop (1024–1280px)
+
+Tablet
+
+Mobile
+
+No layout regressions
+
+No overlapping elements
+
+No contrast failures
+
+Constraints
+
+❌ Do NOT change copy
+
+❌ Do NOT add new sections
+
+❌ Do NOT introduce animations beyond what’s specified
+
+❌ Do NOT redesign — this is refinement, not reinvention
+
+Definition of Done
+
+Header visually disappears into the hero at top
+
+White toolbar appears cleanly on scroll
+
+Logo looks intentional, balanced, and sharp
+
+Site feels cohesive, premium, and modern
+
+Zero visual “why is that there?” moments
+
+Proceed step-by-step, test thoroughly, and confirm once complete.

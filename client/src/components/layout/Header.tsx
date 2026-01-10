@@ -11,17 +11,18 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled || isOpen ? "bg-white shadow-sm" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-out ${
+          isScrolled || isOpen ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
         }`}
       >
         <div className="container-wide">
@@ -30,7 +31,7 @@ export function Header() {
               <img 
                 src="/attached_assets/ChatGPT_Image_Jan_10,_2026,_04_55_11_PM_1768064127781.png" 
                 alt="Attic Conversions" 
-                className="h-24 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </Link>
 
@@ -39,7 +40,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`nav-link ${location === item.href ? "active" : ""}`}
+                  className={`nav-link ${location === item.href ? "active" : ""} ${!isScrolled && !isOpen ? "nav-link-light" : ""}`}
                   data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {item.label}

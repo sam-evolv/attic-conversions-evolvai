@@ -275,6 +275,14 @@
   transform: scaleX(1);
 }
 
+.nav-link-light {
+  color: #1F1F1F;
+}
+
+.nav-link-light:hover {
+  color: #990101;
+}
+
 .section-padding {
   @apply py-20 md:py-28;
 }
