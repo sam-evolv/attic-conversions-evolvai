@@ -7,11 +7,11 @@ export function Footer() {
     <footer className="bg-[#1F1F1F] text-white py-20" role="contentinfo">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-start">
-          <div className="text-center lg:text-right order-2 lg:order-1">
+          <div className="text-center lg:text-left order-2 lg:order-1">
             <address className="not-italic space-y-3 text-sm mb-6">
               <a
                 href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
-                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors focus-ring rounded justify-center lg:justify-end"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors focus-ring rounded justify-center lg:justify-start"
                 data-testid="footer-phone"
               >
                 <Phone className="w-4 h-4" />
@@ -19,19 +19,19 @@ export function Footer() {
               </a>
               <a
                 href={`mailto:${companyInfo.email}`}
-                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors focus-ring rounded justify-center lg:justify-end"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors focus-ring rounded justify-center lg:justify-start"
                 data-testid="footer-email"
               >
                 <Mail className="w-4 h-4" />
                 <span>{companyInfo.email}</span>
               </a>
-              <span className="flex items-center gap-3 text-white/50 justify-center lg:justify-end">
+              <span className="flex items-center gap-3 text-white/50 justify-center lg:justify-start">
                 <MapPin className="w-4 h-4" />
                 <span>{companyInfo.address}</span>
               </span>
             </address>
 
-            <div className="flex items-center gap-3 justify-center lg:justify-end">
+            <div className="flex items-center gap-3 justify-center lg:justify-start">
               <a
                 href={companyInfo.facebook}
                 target="_blank"
