@@ -8,7 +8,7 @@ export function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+          backgroundImage: `url('/attached_assets/Gemini_Generated_Image_mg7xtmg7xtmg7xtm_1768059709838.png')`,
         }}
         aria-hidden="true"
       />

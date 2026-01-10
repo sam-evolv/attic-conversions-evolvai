@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail } from "lucide-react";
-import { navigation, companyInfo } from "@/content/siteContent";
+import { Menu, X } from "lucide-react";
+import { navigation } from "@/content/siteContent";
 import { Button } from "@/components/ui/button";
 
 function Logo({ className = "" }: { className?: string }) {
@@ -91,22 +91,6 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
-                <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
-                  <a
-                    href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
-                    className="flex items-center gap-3 px-4 py-2 text-base font-medium text-foreground"
-                  >
-                    <Phone className="w-5 h-5 text-primary" />
-                    {companyInfo.phone}
-                  </a>
-                  <a
-                    href={`mailto:${companyInfo.email}`}
-                    className="flex items-center gap-3 px-4 py-2 text-base text-muted-foreground"
-                  >
-                    <Mail className="w-5 h-5" />
-                    {companyInfo.email}
-                  </a>
-                </div>
                 <Link href={navigation.cta.href} onClick={() => setIsOpen(false)}>
                   <Button className="w-full mt-4 btn-primary h-14 text-base" data-testid="mobile-cta">
                     {navigation.cta.label}
