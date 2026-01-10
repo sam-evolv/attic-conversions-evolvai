@@ -139,12 +139,17 @@ export function JourneyAdvisorPanel({
             <div className={prefersReducedMotion ? "" : "animate-fade-in"}>
               <div className="flex items-start gap-2 mb-3">
                 <Lightbulb className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <p className="text-sm font-medium">{advice.summary}</p>
+                <div>
+                  <p className="text-sm font-medium">{advice.summary}</p>
+                  {advice.status === "degraded" && (
+                    <span className="text-xs text-muted-foreground">(general guidance)</span>
+                  )}
+                </div>
               </div>
               
-              {advice.keyPoints.length > 0 && (
+              {advice.details.length > 0 && (
                 <ul className="space-y-1.5 ml-6 mb-3">
-                  {advice.keyPoints.map((point, index) => (
+                  {advice.details.map((point, index) => (
                     <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                       {point}
@@ -153,13 +158,13 @@ export function JourneyAdvisorPanel({
                 </ul>
               )}
 
-              {advice.nextStep && (
+              {advice.nextQuestions.length > 0 && (
                 <p className="text-xs text-primary font-medium mt-3 pt-3 border-t border-border">
-                  Next: {advice.nextStep}
+                  {advice.nextQuestions[0]}
                 </p>
               )}
 
-              <div className="flex gap-2 mt-4">
+              <div className="flex flex-wrap gap-2 mt-4">
                 {QUICK_PROMPTS.map((prompt) => (
                   <Button
                     key={prompt.type}

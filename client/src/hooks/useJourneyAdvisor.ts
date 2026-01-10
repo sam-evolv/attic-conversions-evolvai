@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 
 interface JourneyAdviceRequest {
   stepId: string;
@@ -11,9 +11,10 @@ interface JourneyAdviceRequest {
 }
 
 interface JourneyAdviceResponse {
+  status: "ok" | "degraded";
   summary: string;
-  keyPoints: string[];
-  nextStep?: string;
+  details: string[];
+  nextQuestions: string[];
 }
 
 interface UseJourneyAdvisorReturn {
@@ -25,6 +26,7 @@ interface UseJourneyAdvisorReturn {
 }
 
 export function useJourneyAdvisor(): UseJourneyAdvisorReturn {
+  const retryCount = useRef(0);
   const [advice, setAdvice] = useState<JourneyAdviceResponse | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -33,7 +35,7 @@ export function useJourneyAdvisor(): UseJourneyAdvisorReturn {
     setIsLoading(true);
     setError(null);
 
-    try {
+    const attemptFetch = async (): Promise<JourneyAdviceResponse | null> => {
       const response = await fetch("/api/journey/advice", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -44,11 +46,35 @@ export function useJourneyAdvisor(): UseJourneyAdvisorReturn {
         throw new Error("Failed to get advice");
       }
 
-      const data: JourneyAdviceResponse = await response.json();
-      setAdvice(data);
+      return response.json();
+    };
+
+    try {
+      const data = await attemptFetch();
+      if (data) {
+        setAdvice(data);
+        setError(null);
+      }
+      retryCount.current = 0;
     } catch (err) {
-      setError("Unable to get advice right now. Please try again.");
-      setAdvice(null);
+      if (retryCount.current < 1) {
+        retryCount.current++;
+        try {
+          const data = await attemptFetch();
+          if (data) {
+            setAdvice(data);
+            setError(null);
+          }
+          retryCount.current = 0;
+          setIsLoading(false);
+          return;
+        } catch {
+        }
+      }
+      if (!advice) {
+        setError("Unable to get advice right now. Please try again.");
+      }
+      retryCount.current = 0;
     } finally {
       setIsLoading(false);
     }

@@ -1,0 +1,44 @@
+Task: Fix the “Unable to generate advice at this time.” state in the Attic Journey “Need tailored advice?” panel.
+
+Context:
+- This project uses in-memory storage (no DB). Do not add database dependencies.
+- The UI currently renders a fallback/error state for the advisor card.
+- Goal is to make the advisor reliably return guidance (or a high-quality deterministic fallback) and never appear “broken” to users.
+
+Requirements:
+1) Identify root cause
+- Trace the request flow from the Attic Journey page to the advisor API endpoint (frontend hook/component → fetch → server route).
+- Confirm the endpoint path the UI calls (e.g., /api/…); ensure it matches the server route exactly.
+- Check network errors, non-200 responses, JSON parsing failures, and missing fields that could trip UI state handling.
+
+2) Make the advisor endpoint robust
+- Ensure the endpoint always returns valid JSON with a stable schema:
+  {
+    "status": "ok" | "degraded",
+    "summary": string,
+    "details": string[],
+    "nextQuestions": string[]
+  }
+- If the OpenAI key is missing or the model call fails, return status="degraded" with a useful fallback response based on the current journey answers (do not return a generic error message).
+- Add server-side logging that is informative in dev but does not leak secrets.
+
+3) Fix client-side handling
+- Ensure the UI treats status="degraded" as a normal response (show content), not an error state.
+- Only show “Unable to generate advice…” if:
+  - the request fails AND no cached or fallback content exists.
+- Add lightweight retry logic (one retry) and a “Try again” action.
+
+4) Environment/config sanity
+- Confirm how secrets are provided in Replit deploys.
+- Verify the server has access to the OpenAI API key at runtime (server-side env var, not exposed to client).
+- If required, update docs/config so devs know what env var name to set.
+
+Acceptance criteria:
+- Advisor panel shows tailored guidance for a typical path (“I’m not sure” etc.) without errors.
+- When the API key is missing, the panel still shows a meaningful “degraded” guidance response (no “Unable to generate…”).
+- No console errors. No LSP errors introduced.
+- No layout regressions on mobile/tablet/desktop.
+
+Deliverables:
+- A short note in the PR/changes summary stating the root cause and the fix.
+- Updated/added tests only if they already exist in the project; otherwise keep changes minimal and focused.
