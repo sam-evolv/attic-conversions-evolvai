@@ -22,7 +22,7 @@ export default function FAQ() {
   if (DISPLAY_CATEGORIES.length === 0) {
     return (
       <Layout>
-        <Section>
+        <Section first>
           <div className="text-center py-12">
             <h1 className="text-3xl font-serif font-semibold mb-4">FAQ</h1>
             <p className="text-muted-foreground">No questions available at this time.</p>
@@ -34,7 +34,7 @@ export default function FAQ() {
 
   return (
     <Layout>
-      <Section>
+      <Section first>
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h1 className="text-3xl sm:text-4xl font-serif font-semibold mb-4">
             Frequently Asked Questions

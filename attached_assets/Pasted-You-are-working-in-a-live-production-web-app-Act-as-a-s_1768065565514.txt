@@ -1,0 +1,95 @@
+You are working in a live production web app. Act as a senior frontend engineer with strong UX judgment.
+
+OBJECTIVES (DO ALL, NO PARTIALS):
+
+1) FIX GLOBAL HEADER → PAGE SPACING ISSUE (CRITICAL)
+---------------------------------------------------
+There is an excessive vertical gap between the fixed top navigation/header and the first page header/hero on ALL inner pages:
+- Attic Journey
+- Services
+- Process
+- Costs & Timeline
+- FAQ
+- Contact
+
+The Home page is correct and MUST remain unchanged.
+
+ROOT CAUSE TO FIND:
+- This gap is NOT intentional.
+- It is coming from either:
+  a) padding-top or margin-top on <main> in the Layout
+  b) a per-page wrapper (e.g. pt-24 / mt-32 / spacer div)
+  c) duplicated offset added to compensate for fixed header
+
+REQUIRED FIX:
+- Standardise spacing at the Layout level.
+- Remove arbitrary per-page top spacing.
+- Ensure the first visible heading on inner pages sits at a visually correct distance below the header (tight, intentional, premium).
+- Header height compensation should exist ONCE and only once.
+
+CONSTRAINTS:
+- Do NOT touch the Home hero spacing.
+- Do NOT hardcode page-specific hacks.
+- Do NOT introduce negative margins.
+- Do NOT break mobile/tablet spacing.
+- Result must be consistent across all inner pages.
+
+ACCEPTANCE CRITERIA:
+- No large blank band between header and page title.
+- All inner pages look visually aligned and professionally designed.
+- Header remains fixed and functional.
+- Home page remains unchanged.
+
+---------------------------------------------------
+
+2) AI INTEGRATION — MAKE IT BEST-IN-CLASS (STRATEGY + IMPLEMENTATION)
+-------------------------------------------------------------------
+This site includes an "Attic Journey" / guided experience. Elevate the AI integration so it feels premium, intentional, and valuable — not gimmicky.
+
+REQUIRED AI UX PRINCIPLES:
+- AI should guide, not interrupt.
+- No popups on page load.
+- No chatbot spam.
+- Context-aware assistance only.
+
+IMPLEMENT THE FOLLOWING:
+A) Attic Journey AI
+- AI reads the current step/page context.
+- Offers short, relevant prompts (e.g. “Want to know if your roof qualifies?”).
+- Responses are concise, structured, and skimmable.
+- AI output visually matches the design system (cards, callouts, subtle tone).
+
+B) Progressive Disclosure
+- AI only appears when useful (button, inline helper, or expandable panel).
+- No persistent floating widget unless explicitly designed.
+
+C) Technical Guardrails
+- AI logic must be isolated (component or hook).
+- No layout shift when AI appears/disappears.
+- Must respect prefers-reduced-motion.
+- Must not block page rendering.
+
+DO NOT:
+- Add marketing fluff.
+- Add fake “thinking” delays.
+- Overwrite existing content.
+- Change copy unless explicitly instructed.
+
+---------------------------------------------------
+
+3) CLEANUP & VALIDATION
+----------------------
+- Inspect all affected pages after fix.
+- Confirm spacing consistency across desktop + mobile.
+- Remove any unused spacer divs or redundant padding utilities.
+- Ensure no regression to header transparency/scroll behavior.
+
+FINAL OUTPUT REQUIRED:
+- Brief summary of:
+  a) Where the spacing issue came from
+  b) What was changed (file + concept)
+  c) Confirmation that Home page was untouched
+- No questions back to me.
+- Implement, verify, then report.
+
+Proceed methodically and ship a clean, professional result.

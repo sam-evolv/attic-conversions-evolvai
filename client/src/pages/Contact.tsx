@@ -52,7 +52,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <Section>
+      <Section first>
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-4">
             {contact.headline}

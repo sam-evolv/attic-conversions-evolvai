@@ -7,6 +7,7 @@ interface SectionProps {
   container?: "wide" | "narrow";
   background?: "default" | "muted" | "accent";
   id?: string;
+  first?: boolean;
 }
 
 export function Section({
@@ -15,6 +16,7 @@ export function Section({
   container = "wide",
   background = "default",
   id,
+  first = false,
 }: SectionProps) {
   const bgClasses = {
     default: "bg-[#FAF8F6]",
@@ -30,7 +32,11 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("section-padding", bgClasses[background], className)}
+      className={cn(
+        first ? "pt-8 pb-20 md:pt-12 md:pb-28" : "section-padding",
+        bgClasses[background],
+        className
+      )}
     >
       <div className={containerClasses[container]}>{children}</div>
     </section>
