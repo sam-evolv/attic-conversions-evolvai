@@ -388,6 +388,10 @@ export const faqCategories = [
   },
 ];
 
+export const popularQuestions = faqCategories
+  .flatMap(cat => cat.questions)
+  .slice(0, 4);
+
 export const testimonials = [
   {
     quote: "Your team was one of the most professional group of people we have seen so far. The pace and quality of work was so well managed.",
