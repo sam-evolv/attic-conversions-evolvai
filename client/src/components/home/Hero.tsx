@@ -13,16 +13,13 @@ export function Hero() {
         aria-hidden="true"
       />
       <div className="absolute inset-0 hero-overlay" aria-hidden="true" />
-      
       <div className="container-wide relative z-10 py-20 lg:py-28">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.1] mb-8 animate-slide-up text-shadow-soft">
             Transform Your Attic Into Beautiful, Functional Space
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto animate-slide-up stagger-1">
-            Family-run specialists since 1995 delivering over 1,000 certified attic conversions across Ireland.
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto animate-slide-up stagger-1">Family-run specialists since 1992 delivering over 1,000 certified attic conversions across Ireland.</p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-5 mb-14 animate-slide-up stagger-2">
             <Link href="/contact">
