@@ -1,0 +1,158 @@
+You are a senior design-engineering Replit Agent.
+
+ROLE:
+Act as a premium digital studio delivering a flagship website for a long-established Irish construction business.
+
+BUSINESS NAME:
+Attic Conversions
+
+NON-NEGOTIABLE BRAND RULES:
+- Primary brand colour: #990101 ONLY
+- Backgrounds: warm off-whites (#FAF8F6, #F7F5F2)
+- Text: #1F1F1F or #2A2A2A
+- No yellow. No amber. No modern-tech neon.
+- Aesthetic: traditional premium, refined craftsman, established authority.
+- This is NOT a startup. This is a family business since 1995.
+
+---
+
+## SECTION 1 — HERO (CRITICAL)
+
+REBUILD THE HERO COMPLETELY.
+
+MANDATES:
+- Centered composition (horizontal and vertical).
+- Cinematic background image:
+  - Real attic / roof / craftsmanship context.
+  - Soft depth-of-field or gradient overlay.
+  - No flat patterns, no generic SVG-only backgrounds.
+- Large, confident typography.
+- Generous spacing. Nothing cramped.
+
+H1 (EXACT):
+"Transform Your Attic Into Beautiful, Functional Space"
+
+Subheading:
+Family-run specialists since 1995 delivering over 1,000 certified attic conversions across Ireland.
+
+Trust Signals (INLINE, NO GAPS):
+• Family-run since 1995  
+• 1,000+ conversions  
+• Fully insured  
+• Certified compliance  
+
+Buttons:
+- Primary: Get a Quote (brand red)
+- Secondary: View Our Process (outline, premium hover)
+Buttons must feel weighty, tactile, and expensive.
+
+REMOVE COMPLETELY FROM HERO:
+- “Your journey starts here”
+- Step cards
+- Any sales funnel language
+
+---
+
+## SECTION 2 — VISUAL QUALITY UPLIFT (GLOBAL)
+
+GLOBAL REQUIREMENTS:
+- Introduce subtle motion everywhere:
+  - Micro-hover lifts
+  - Soft shadow transitions
+  - Ease-in-out timing
+- Eliminate dead space and awkward gaps.
+- All spacing must feel intentional.
+- No cheap flat sections.
+
+Buttons:
+- Rounded but not pill-shaped.
+- Subtle inner shadow.
+- Hover = slight lift + darker red.
+
+Cards:
+- Soft depth shadow.
+- Hover lift + scale (very subtle).
+- No hard borders.
+
+---
+
+## SECTION 3 — TESTIMONIALS (WOW UPGRADE)
+
+REBUILD testimonials entirely.
+
+MANDATES:
+- Centered section title:
+  “What Our Clients Say”
+- Auto-advancing carousel (5–7s).
+- Swipe-enabled.
+- Pause on hover.
+- Smooth easing.
+- Cards feel like they float.
+- Use MANY testimonials from the original site, not 3–4.
+- This must feel alive.
+
+---
+
+## SECTION 4 — CONTENT COMPLETENESS (NO DATA LOSS)
+
+CRITICAL REQUIREMENT:
+NO INFORMATION FROM THE ORIGINAL SITE IS TO BE LOST.
+
+You MUST implement:
+- Advice Centre
+- Roof suitability
+- Habitable vs storage
+- New houses & BER ratings
+- Fire regulations
+- Stair types
+- Dormer options
+- FAQ depth (not shallow summaries)
+
+These can be:
+- Dedicated pages OR
+- Structured sections with internal navigation
+
+But NOTHING is to be omitted.
+
+---
+
+## SECTION 5 — LOGO & BRANDING
+
+LOGO USAGE:
+- Header: left-aligned, balanced size.
+- Footer: logo + “Family-run since 1995”.
+- No oversized logos.
+- Respect whitespace.
+
+Favicon:
+- Use logo mark if available.
+
+---
+
+## SECTION 6 — NAVIGATION & HEADER
+
+HEADER MUST:
+- Feel solid and authoritative.
+- Contain phone number and email visibly.
+- Sticky with subtle shadow on scroll.
+- Never feel light or flimsy.
+
+CTA:
+- “Get a Quote” persistent but not aggressive.
+
+---
+
+## FINAL ACCEPTANCE CRITERIA (READ CAREFULLY)
+
+THIS BUILD IS ONLY ACCEPTABLE IF:
+- The site looks unmistakably premium.
+- It feels established, not modern-tech.
+- The hero alone feels worth tens of thousands.
+- No major information from the old site is missing.
+- Nothing feels cheap, generic, or templated.
+
+If unsure, OVERBUILD rather than underbuild.
+
+Proceed methodically.
+Refactor components if required.
+Do not rush.
