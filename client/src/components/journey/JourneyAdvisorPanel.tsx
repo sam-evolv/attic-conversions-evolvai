@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Lightbulb, ChevronDown, ChevronUp, Loader2, AlertCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useJourneyAdvisor } from "@/hooks/useJourneyAdvisor";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 interface JourneyAdvisorPanelProps {
   stepId: string;
@@ -27,9 +28,7 @@ export function JourneyAdvisorPanel({
 }: JourneyAdvisorPanelProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const { advice, isLoading, error, fetchAdvice, clearAdvice } = useJourneyAdvisor();
-
-  const prefersReducedMotion = typeof window !== "undefined" 
-    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReducedMotion = useReducedMotion();
 
   const handlePromptClick = (promptType: "suitability" | "planning" | "general") => {
     fetchAdvice({
@@ -76,11 +75,16 @@ export function JourneyAdvisorPanel({
         )}
       </button>
 
-      {isExpanded && (
-        <div 
-          className="mt-3 p-4 rounded-lg bg-muted/30 border border-border"
-          style={{ minHeight: advice || isLoading || error ? "180px" : "auto" }}
-        >
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div
+            initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, height: 0 }}
+            animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, height: "auto" }}
+            exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, height: 0 }}
+            transition={{ duration: prefersReducedMotion ? 0.15 : 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-3 p-4 rounded-lg bg-muted/30 border border-border overflow-hidden"
+            style={{ minHeight: advice || isLoading || error ? "180px" : "auto" }}
+          >
           {!advice && !isLoading && !error && (
             <>
               <p className="text-sm text-muted-foreground mb-3">
@@ -177,8 +181,9 @@ export function JourneyAdvisorPanel({
               </div>
             </div>
           )}
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
