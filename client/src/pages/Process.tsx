@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Clock, AlertCircle } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
@@ -68,14 +68,6 @@ export default function Process() {
                     </ul>
                   </div>
 
-                  {(step.planningNote || step.disruption || step.important) && (
-                    <div className="flex items-start gap-3 bg-accent/30 rounded-lg p-4">
-                      <AlertCircle className="w-5 h-5 text-accent-foreground flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-accent-foreground">
-                        {step.planningNote || step.disruption || step.important}
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
             ))}

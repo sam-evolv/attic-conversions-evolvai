@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { getResendClient } from "./resend";
+import { getJourneyAdvice, journeyAdviceRequestSchema } from "./journeyAdvisor";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -62,6 +63,27 @@ export async function registerRoutes(
       res.status(500).json({ 
         success: false, 
         error: "Failed to send message. Please try calling us directly." 
+      });
+    }
+  });
+
+  // Journey advisor AI endpoint
+  app.post("/api/journey/advice", async (req, res) => {
+    const parsed = journeyAdviceRequestSchema.safeParse(req.body);
+    
+    if (!parsed.success) {
+      return res.status(400).json({ 
+        error: "Invalid request. Please try again." 
+      });
+    }
+    
+    try {
+      const advice = await getJourneyAdvice(parsed.data);
+      res.json(advice);
+    } catch (error) {
+      console.error("Journey advice error:", error);
+      res.status(500).json({ 
+        error: "Unable to get advice at this time. Please try again." 
       });
     }
   });

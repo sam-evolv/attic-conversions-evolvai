@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, CheckCircle, ChevronDown, ChevronUp, Phone, Info
 import { Layout } from "@/components/layout/Layout";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
+import { JourneyAdvisorPanel } from "@/components/journey/JourneyAdvisorPanel";
 import { journeySteps, companyInfo } from "@/content/siteContent";
 
 export default function AtticJourney() {
@@ -229,7 +230,18 @@ export default function AtticJourney() {
                 </div>
               )}
 
-              <div className="flex gap-3">
+              <JourneyAdvisorPanel
+                stepId={currentStepData.id}
+                stepTitle={currentStepData.title}
+                question={currentStepData.question}
+                keyFact={currentStepData.keyFact}
+                selectedOption={currentSelection}
+                selectedOptionLabel={
+                  currentStepData.options?.find((o) => o.id === currentSelection)?.label
+                }
+              />
+
+              <div className="flex gap-3 mt-6">
                 {currentStep > 0 && (
                   <Button variant="outline" onClick={handleBack} className="flex-1" data-testid="journey-back">
                     <ArrowLeft className="mr-2 w-4 h-4" />
