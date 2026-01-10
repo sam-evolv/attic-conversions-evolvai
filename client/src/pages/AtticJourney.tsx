@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 import { JourneyAdvisorPanel } from "@/components/journey/JourneyAdvisorPanel";
 import { journeySteps, companyInfo } from "@/content/siteContent";
+import { PageTransition } from "@/components/ui/PageTransition";
 
 export default function AtticJourney() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -54,15 +55,16 @@ export default function AtticJourney() {
   return (
     <Layout>
       <Section first>
-        <div className="max-w-2xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-2">
-              Your Attic Journey
-            </h1>
-            <p className="text-muted-foreground">
-              Answer a few questions to see if your attic is suitable for conversion.
-            </p>
-          </div>
+        <PageTransition>
+          <div className="max-w-2xl mx-auto">
+            <div className="mb-8">
+              <h1 className="text-3xl sm:text-4xl font-bold mb-2">
+                Your Attic Journey
+              </h1>
+              <p className="text-muted-foreground">
+                Answer a few questions to see if your attic is suitable for conversion.
+              </p>
+            </div>
 
           <div className="mb-8">
             <div className="flex items-center justify-between mb-2">
@@ -256,7 +258,8 @@ export default function AtticJourney() {
               </div>
             </div>
           )}
-        </div>
+          </div>
+        </PageTransition>
       </Section>
     </Layout>
   );

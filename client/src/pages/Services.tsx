@@ -6,6 +6,8 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 import { services } from "@/content/siteContent";
 import { CTASection } from "@/components/home/CTASection";
+import { PageTransition } from "@/components/ui/PageTransition";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export default function Services() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -13,24 +15,26 @@ export default function Services() {
   return (
     <Layout>
       <Section first>
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-4">
-            {services.headline}
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            {services.subheadline}
-          </p>
-        </div>
+        <PageTransition>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-4">
+              {services.headline}
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              {services.subheadline}
+            </p>
+          </div>
+        </PageTransition>
 
         <div className="grid gap-6">
-          {services.items.map((service) => {
+          {services.items.map((service, index) => {
             const isExpanded = expandedId === service.id;
             return (
-              <div
-                key={service.id}
-                className="bg-card rounded-xl border border-border card-shadow overflow-hidden"
-                data-testid={`service-${service.id}`}
-              >
+              <ScrollReveal key={service.id} delay={index * 100}>
+                <div
+                  className="bg-card rounded-xl border border-border card-shadow overflow-hidden"
+                  data-testid={`service-${service.id}`}
+                >
                 <button
                   onClick={() => setExpandedId(isExpanded ? null : service.id)}
                   className="w-full p-6 sm:p-8 text-left flex items-start justify-between gap-4"
@@ -80,19 +84,22 @@ export default function Services() {
                     </div>
                   </div>
                 )}
-              </div>
+                </div>
+              </ScrollReveal>
             );
           })}
         </div>
 
-        <div className="text-center mt-12">
-          <Link href="/contact">
-            <Button size="lg" className="group" data-testid="services-cta">
-              Discuss Your Project
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </Link>
-        </div>
+        <ScrollReveal delay={400}>
+            <div className="text-center mt-12">
+            <Link href="/contact">
+              <Button size="lg" className="group" data-testid="services-cta">
+                Discuss Your Project
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+          </div>
+        </ScrollReveal>
       </Section>
       <CTASection />
     </Layout>

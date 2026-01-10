@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonials } from "@/content/siteContent";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const VISIBLE_TESTIMONIALS = testimonials || [];
 
@@ -50,14 +51,16 @@ export function TestimonialSection() {
   return (
     <Section background="default" className="overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-4">
-            What Our Clients Say
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            Real feedback from homeowners across Dublin who trusted us with their attic conversion.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+              Real feedback from homeowners across Dublin who trusted us with their attic conversion.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div
           ref={containerRef}
