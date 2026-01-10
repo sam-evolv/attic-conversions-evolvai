@@ -78,9 +78,7 @@ export function JourneyAdvisorPanel({
 
       {isExpanded && (
         <div 
-          className={`mt-3 p-4 rounded-lg bg-muted/30 border border-border ${
-            prefersReducedMotion ? "" : "animate-fade-in"
-          }`}
+          className="mt-3 p-4 rounded-lg bg-muted/30 border border-border"
           style={{ minHeight: advice || isLoading || error ? "180px" : "auto" }}
         >
           {!advice && !isLoading && !error && (
@@ -135,7 +133,7 @@ export function JourneyAdvisorPanel({
           )}
 
           {advice && !isLoading && (
-            <div className={prefersReducedMotion ? "" : "animate-fade-in"}>
+            <div>
               <div className="flex items-start gap-2 mb-3">
                 <Lightbulb className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <div>

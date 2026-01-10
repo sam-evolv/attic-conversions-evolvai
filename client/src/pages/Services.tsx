@@ -6,8 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 import { services } from "@/content/siteContent";
 import { CTASection } from "@/components/home/CTASection";
-import { PageTransition } from "@/components/ui/PageTransition";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function Services() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -15,7 +14,7 @@ export default function Services() {
   return (
     <Layout>
       <Section first>
-        <PageTransition>
+        <Reveal distance={16}>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-4">
               {services.headline}
@@ -24,13 +23,13 @@ export default function Services() {
               {services.subheadline}
             </p>
           </div>
-        </PageTransition>
+        </Reveal>
 
         <div className="grid gap-6">
-          {services.items.map((service, index) => {
+          {services.items.map((service) => {
             const isExpanded = expandedId === service.id;
             return (
-              <ScrollReveal key={service.id} delay={index * 100}>
+              <Reveal key={service.id} distance={16} duration={0.4}>
                 <div
                   className="bg-card rounded-xl border border-border card-shadow overflow-hidden"
                   data-testid={`service-${service.id}`}
@@ -57,7 +56,7 @@ export default function Services() {
                 </button>
 
                 {isExpanded && (
-                  <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-0 animate-fade-in">
+                  <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
                     <div className="border-t border-border pt-6">
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
@@ -85,13 +84,13 @@ export default function Services() {
                   </div>
                 )}
                 </div>
-              </ScrollReveal>
+              </Reveal>
             );
           })}
         </div>
 
-        <ScrollReveal delay={400}>
-            <div className="text-center mt-12">
+        <Reveal delay={0.3}>
+          <div className="text-center mt-12">
             <Link href="/contact">
               <Button size="lg" className="group" data-testid="services-cta">
                 Discuss Your Project
@@ -99,7 +98,7 @@ export default function Services() {
               </Button>
             </Link>
           </div>
-        </ScrollReveal>
+        </Reveal>
       </Section>
       <CTASection />
     </Layout>

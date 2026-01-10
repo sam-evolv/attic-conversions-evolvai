@@ -2,12 +2,15 @@ import { Link } from "wouter";
 import { ArrowRight, CheckCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { journeySteps, companyInfo } from "@/content/siteContent";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface JourneySummaryProps {
   selections: Record<string, string>;
 }
 
 export function JourneySummary({ selections }: JourneySummaryProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   const getOptionLabel = (stepId: string, optionId: string) => {
     const step = journeySteps.find((s) => s.id === stepId);
     if (!step?.options) return optionId;
@@ -23,12 +26,21 @@ export function JourneySummary({ selections }: JourneySummaryProps) {
     scenario = hasLowHeight ? "challenging" : "questions";
   }
 
-  const nextStepInfo = journeySteps[4].nextStepsOptions?.find(
+  const lastStep = journeySteps[4] as {
+    nextStepsOptions?: Array<{ scenario: string; title: string; description: string; action: string }>;
+    whatToExpect?: string[];
+  };
+
+  const nextStepInfo = lastStep.nextStepsOptions?.find(
     (opt) => opt.scenario === scenario
-  ) || journeySteps[4].nextStepsOptions?.[0];
+  ) || lastStep.nextStepsOptions?.[0];
 
   return (
-    <div className="animate-fade-in">
+    <motion.div
+      initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
+      animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      transition={{ duration: prefersReducedMotion ? 0.15 : 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
       <div className="mb-8">
         <span className="text-sm font-medium text-primary mb-2 block">
           Your Results
@@ -78,7 +90,7 @@ export function JourneySummary({ selections }: JourneySummaryProps) {
       <div className="bg-muted/50 rounded-xl p-6 mb-8">
         <h4 className="font-semibold mb-3">What To Expect Next</h4>
         <ul className="space-y-2">
-          {journeySteps[4].whatToExpect?.map((item, index) => (
+          {lastStep.whatToExpect?.map((item: string, index: number) => (
             <li key={index} className="flex items-center gap-3 text-sm text-muted-foreground">
               <CheckCircle className="w-4 h-4 text-primary" />
               {item}
@@ -101,6 +113,6 @@ export function JourneySummary({ selections }: JourneySummaryProps) {
           </Button>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }

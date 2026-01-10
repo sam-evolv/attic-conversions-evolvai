@@ -3,12 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { homeIntro } from "@/content/siteContent";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/Section";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 
 export function IntroSection() {
   return (
     <Section background="default">
-      <ScrollReveal>
+      <Reveal distance={16}>
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-4">
             {homeIntro.headline}
@@ -17,11 +17,11 @@ export function IntroSection() {
             {homeIntro.description}
           </p>
         </div>
-      </ScrollReveal>
+      </Reveal>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-12">
+      <RevealGroup className="grid md:grid-cols-3 gap-8 mb-12" staggerDelay={0.08}>
         {homeIntro.steps.map((step, index) => (
-          <ScrollReveal key={index} delay={index * 100}>
+          <RevealItem key={index}>
             <div
               className="relative bg-card rounded-xl p-8 border border-border transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/20 group cursor-pointer h-full"
               data-testid={`intro-step-${index}`}
@@ -36,11 +36,11 @@ export function IntroSection() {
                 {step.description}
               </p>
             </div>
-          </ScrollReveal>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
 
-      <ScrollReveal delay={300}>
+      <Reveal delay={0.3}>
         <div className="text-center">
           <Link href={homeIntro.cta.href}>
             <Button size="lg" className="group" data-testid="intro-cta">
@@ -49,7 +49,7 @@ export function IntroSection() {
             </Button>
           </Link>
         </div>
-      </ScrollReveal>
+      </Reveal>
     </Section>
   );
 }

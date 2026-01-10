@@ -7,8 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { contact, companyInfo } from "@/content/siteContent";
-import { PageTransition } from "@/components/ui/PageTransition";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -55,7 +54,7 @@ export default function Contact() {
   return (
     <Layout>
       <Section first>
-        <PageTransition>
+        <Reveal distance={16}>
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold mb-4">
               {contact.headline}
@@ -64,10 +63,10 @@ export default function Contact() {
               {contact.subheadline}
             </p>
           </div>
-        </PageTransition>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <ScrollReveal delay={100}>
+          <Reveal delay={0.1}>
             <div className="card-premium p-6 sm:p-8 mb-8">
               <h2 className="text-xl font-serif font-semibold mb-6">
                 Contact Details
@@ -142,9 +141,9 @@ export default function Contact() {
                 advice. No pressure, no sales pitch—just clear, expert guidance.
               </p>
             </div>
-          </ScrollReveal>
+          </Reveal>
 
-          <ScrollReveal delay={200}>
+          <Reveal delay={0.2}>
             <div className="card-premium p-6 sm:p-8">
             {submitted ? (
               <div className="text-center py-12">
@@ -254,7 +253,7 @@ export default function Contact() {
               </>
             )}
             </div>
-          </ScrollReveal>
+          </Reveal>
         </div>
       </Section>
     </Layout>

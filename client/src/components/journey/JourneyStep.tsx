@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, ChevronDown, ChevronUp, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface JourneyStepProps {
   step: {
@@ -31,9 +32,14 @@ export function JourneyStep({
   isLast,
 }: JourneyStepProps) {
   const [showDetails, setShowDetails] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div className="animate-fade-in">
+    <motion.div
+      initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
+      animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      transition={{ duration: prefersReducedMotion ? 0.15 : 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
       <div className="mb-8">
         <span className="text-sm font-medium text-primary mb-2 block">
           Step {step.number} of 5
@@ -86,14 +92,19 @@ export function JourneyStep({
       )}
 
       {selectedOption && step.whatThisMeans && step.whatThisMeans[selectedOption] && (
-        <div className="bg-card rounded-xl p-6 mb-8 border border-border card-shadow animate-fade-in">
+        <motion.div
+          initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+          animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          transition={{ duration: prefersReducedMotion ? 0.15 : 0.3 }}
+          className="bg-card rounded-xl p-6 mb-8 border border-border card-shadow"
+        >
           <h4 className="font-semibold mb-2 text-foreground">
             What This Means For You
           </h4>
           <p className="text-muted-foreground">
             {step.whatThisMeans[selectedOption]}
           </p>
-        </div>
+        </motion.div>
       )}
 
       <button
@@ -110,14 +121,19 @@ export function JourneyStep({
       </button>
 
       {showDetails && (
-        <div className="bg-muted/50 rounded-xl p-6 mb-8 animate-fade-in">
+        <motion.div
+          initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+          animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          transition={{ duration: prefersReducedMotion ? 0.15 : 0.3 }}
+          className="bg-muted/50 rounded-xl p-6 mb-8"
+        >
           <p className="text-sm text-muted-foreground leading-relaxed">
             For detailed information about {step.title.toLowerCase()}, we recommend
             visiting our dedicated page or speaking with one of our experts during
             your free survey. Every home is unique, and we'll provide personalised
             advice for your specific situation.
           </p>
-        </div>
+        </motion.div>
       )}
 
       <div className="flex justify-end">
@@ -131,6 +147,6 @@ export function JourneyStep({
           <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 }

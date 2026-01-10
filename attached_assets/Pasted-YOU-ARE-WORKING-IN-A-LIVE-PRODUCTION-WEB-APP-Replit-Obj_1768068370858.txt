@@ -1,0 +1,63 @@
+YOU ARE WORKING IN A LIVE PRODUCTION WEB APP (Replit).
+
+Objective
+Add polished, non-intrusive animations so:
+
+1. Each page fades/slides in on initial load and on route changes.
+2. Page sections reveal progressively as the user scrolls down.
+
+Requirements (MANDATORY)
+
+* Use a production-safe approach that does not break routing, layouts, or accessibility.
+* Prefer lightweight libraries already in the stack; if adding a dependency, keep it minimal and justify it.
+
+  * Recommended: Framer Motion for page transitions + IntersectionObserver for scroll reveals (or Framer Motion’s whileInView).
+* Respect “prefers-reduced-motion”:
+
+  * If reduced motion is enabled, disable transforms and use either no animation or a very subtle fade.
+* Performance constraints:
+
+  * No scroll jank, no heavy event listeners, no repeated reflows.
+  * Use IntersectionObserver (or equivalent) rather than manual scroll handlers.
+* Consistency:
+
+  * One consistent motion language across the site (timing, easing, distance).
+  * Avoid flashy effects; keep it clean and premium.
+
+Implementation Scope
+
+1. Page transitions
+
+* Implement an app-level route transition wrapper so every route change triggers a smooth enter/exit.
+* Animation should be subtle:
+
+  * opacity 0 → 1
+  * slight vertical translate (e.g., 8–16px) → 0
+  * duration ~200–350ms
+* Ensure back/forward navigation feels correct and does not “double animate” awkwardly.
+
+2. Scroll reveals
+
+* Create a reusable component or hook (e.g., <Reveal> / useReveal) that:
+
+  * Observes elements entering viewport and animates once (default) or optionally repeats.
+  * Supports staggered reveals for lists/sections (optional, but preferred).
+* Apply reveals to key content blocks on main pages (Hero subcontent, section headers, cards, FAQs, etc.) without changing copy.
+
+3. QA / Validation checklist (DO NOT SKIP)
+
+* App builds and runs with no console errors.
+* Routing still works across all pages; no broken links.
+* Animations are smooth on desktop and mobile.
+* Reduced motion mode disables or minimizes motion correctly.
+* No layout shifts introduced (CLS stable).
+* No new accessibility violations (focus states and keyboard navigation unaffected).
+
+Deliverable
+
+* Provide a brief summary of what you changed:
+
+  * Files touched
+  * Any new dependencies added (and why)
+  * Where page transitions are implemented
+  * How scroll reveal is applied across pages

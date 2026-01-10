@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { faqCategories, popularQuestions } from "@/content/siteContent";
 import { CTASection } from "@/components/home/CTASection";
+import { Reveal } from "@/components/ui/Reveal";
 
 const DISPLAY_CATEGORIES = faqCategories || [];
 const DISPLAY_POPULAR = popularQuestions || [];
@@ -35,17 +36,20 @@ export default function FAQ() {
   return (
     <Layout>
       <Section first>
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h1 className="text-3xl sm:text-4xl font-serif font-semibold mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Find answers to common questions about attic conversions.
-          </p>
-        </div>
+        <Reveal distance={16}>
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h1 className="text-3xl sm:text-4xl font-serif font-semibold mb-4">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Find answers to common questions about attic conversions.
+            </p>
+          </div>
+        </Reveal>
 
         {DISPLAY_POPULAR.length > 0 && (
-          <div className="mb-16">
+          <Reveal delay={0.1}>
+            <div className="mb-16">
             <h2 className="text-lg font-semibold mb-4">Popular Questions</h2>
             <div className="card-static">
               <Accordion type="single" collapsible>
@@ -66,11 +70,13 @@ export default function FAQ() {
                   </AccordionItem>
                 ))}
               </Accordion>
+              </div>
             </div>
-          </div>
+          </Reveal>
         )}
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <Reveal delay={0.15}>
+          <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
             <h2 className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide">
               Categories
@@ -125,10 +131,12 @@ export default function FAQ() {
                 </div>
               )
             )}
+            </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="text-center mt-12">
+        <Reveal delay={0.2}>
+          <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4 text-sm">
             Can't find the answer you're looking for?
           </p>
@@ -138,7 +146,8 @@ export default function FAQ() {
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </Link>
-        </div>
+          </div>
+        </Reveal>
       </Section>
       <CTASection />
     </Layout>

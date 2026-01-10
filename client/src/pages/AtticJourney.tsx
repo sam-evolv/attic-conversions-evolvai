@@ -6,7 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 import { JourneyAdvisorPanel } from "@/components/journey/JourneyAdvisorPanel";
 import { journeySteps, companyInfo } from "@/content/siteContent";
-import { PageTransition } from "@/components/ui/PageTransition";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function AtticJourney() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -55,7 +55,7 @@ export default function AtticJourney() {
   return (
     <Layout>
       <Section first>
-        <PageTransition>
+        <Reveal distance={16}>
           <div className="max-w-2xl mx-auto">
             <div className="mb-8">
               <h1 className="text-3xl sm:text-4xl font-bold mb-2">
@@ -104,7 +104,7 @@ export default function AtticJourney() {
           </div>
 
           {showSummary ? (
-            <div className="bg-card rounded-xl p-6 sm:p-8 border border-border card-shadow animate-fade-in">
+            <div className="bg-card rounded-xl p-6 sm:p-8 border border-border card-shadow">
               <div className="mb-6">
                 <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-4">
                   Your Results
@@ -162,7 +162,7 @@ export default function AtticJourney() {
               </button>
             </div>
           ) : (
-            <div className="bg-card rounded-xl p-6 sm:p-8 border border-border card-shadow animate-fade-in">
+            <div className="bg-card rounded-xl p-6 sm:p-8 border border-border card-shadow">
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-6 flex gap-3">
                 <Info className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
@@ -208,7 +208,7 @@ export default function AtticJourney() {
               </div>
 
               {currentSelection && getWhatThisMeans() && (
-                <div className="bg-muted rounded-lg p-4 mb-6 animate-fade-in">
+                <div className="bg-muted rounded-lg p-4 mb-6">
                   <p className="text-sm font-semibold mb-1">What this means:</p>
                   <p className="text-sm text-muted-foreground">{getWhatThisMeans()}</p>
                 </div>
@@ -223,7 +223,7 @@ export default function AtticJourney() {
               </button>
 
               {showDetails && (
-                <div className="bg-muted/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground animate-fade-in">
+                <div className="bg-muted/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground">
                   {currentStepData.moreDetails}
                 </div>
               )}
@@ -259,7 +259,7 @@ export default function AtticJourney() {
             </div>
           )}
           </div>
-        </PageTransition>
+        </Reveal>
       </Section>
     </Layout>
   );
