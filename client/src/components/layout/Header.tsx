@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { navigation } from "@/content/siteContent"
 import { Button } from "@/components/ui/button";
 
@@ -11,7 +11,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -49,6 +49,13 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-4 flex-shrink-0">
+              <a
+                href="tel:0863175893"
+                className="hidden lg:flex items-center gap-2 text-[15px] font-medium text-gray-700 hover:text-[#B5311E] transition-colors min-h-[48px]"
+                aria-label="Call us: 086 317 5893"
+              >
+                <Phone size={16} /> 086 317 5893
+              </a>
               <Link href={navigation.cta.href}>
                 <Button className="hidden sm:flex btn-primary h-11 px-6 text-sm" data-testid="header-cta">
                   {navigation.cta.label}
