@@ -1,78 +1,55 @@
-import { Calendar, ClipboardList, Hammer, ShieldCheck } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
+import { homeIntro } from "@/content/siteContent";
+import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/Section";
-
-const steps = [
-  {
-    number: "01",
-    Icon: Calendar,
-    title: "Free Survey",
-    description:
-      "We visit your home, assess your attic, and answer every question. No obligation, no jargon.",
-  },
-  {
-    number: "02",
-    Icon: ClipboardList,
-    title: "Design & Quote",
-    description: "You receive a clear, fixed-price quote. No hidden costs, ever.",
-  },
-  {
-    number: "03",
-    Icon: Hammer,
-    title: "2-Week Build",
-    description:
-      "Our team completes the full conversion — clean, fast, minimal disruption to your home.",
-  },
-  {
-    number: "04",
-    Icon: ShieldCheck,
-    title: "Cert & Handover",
-    description:
-      "You receive your compliance certificate and a fully certified, legal living space.",
-  },
-];
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 
 export function IntroSection() {
   return (
     <Section background="default">
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <p className="text-xs font-semibold tracking-widest uppercase text-[#B5311E] mb-4">
-          HOW IT WORKS
-        </p>
-        <h2 className="text-[2.5rem] font-serif font-semibold mb-5 leading-tight">
-          From First Call to Finished Attic — In Just Two Weeks
-        </h2>
-        <p className="text-[17px] text-gray-600 leading-[1.75]">
-          We handle everything. You just choose what you want.
-        </p>
-      </div>
+      <Reveal distance={16}>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-4">
+            {homeIntro.headline}
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            {homeIntro.description}
+          </p>
+        </div>
+      </Reveal>
 
-      <div className="grid md:grid-cols-4 gap-0">
-        {steps.map(({ number, Icon, title, description }, index) => (
-          <div
-            key={number}
-            className="relative px-6 py-8 flex flex-col items-start md:items-center text-left md:text-center animate-slide-up"
-            style={{ animationDelay: `${index * 80}ms`, opacity: 0 }}
-          >
-            {/* Vertical divider between steps (desktop only) */}
-            {index > 0 && (
-              <div className="hidden md:block absolute left-0 top-8 bottom-8 w-px bg-[#B5311E]/20" />
-            )}
-            {/* Horizontal divider between steps (mobile only) */}
-            {index > 0 && (
-              <div className="md:hidden w-full h-px bg-[#B5311E]/20 mb-8" />
-            )}
-
-            <div className="text-[3.5rem] font-serif font-semibold text-[#B5311E] leading-none mb-4 select-none">
-              {number}
+      <RevealGroup className="grid md:grid-cols-3 gap-8 mb-12" staggerDelay={0.08}>
+        {homeIntro.steps.map((step, index) => (
+          <RevealItem key={index}>
+            <div
+              className="relative bg-card rounded-xl p-8 border border-border transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/20 group cursor-pointer h-full"
+              data-testid={`intro-step-${index}`}
+            >
+              <div className="w-12 h-12 rounded-full bg-primary/10 text-primary font-serif font-bold text-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
+                {step.number}
+              </div>
+              <h3 className="text-xl font-serif font-semibold mb-3 transition-colors duration-300 group-hover:text-primary">
+                {step.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {step.description}
+              </p>
             </div>
-            <div className="w-10 h-10 rounded-full bg-[#B5311E]/10 flex items-center justify-center mb-4">
-              <Icon className="w-5 h-5 text-[#B5311E]" />
-            </div>
-            <h3 className="text-[1.25rem] font-serif font-semibold mb-2">{title}</h3>
-            <p className="text-[16px] text-gray-600 leading-relaxed">{description}</p>
-          </div>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
+
+      <Reveal delay={0.3}>
+        <div className="text-center">
+          <Link href={homeIntro.cta.href}>
+            <Button size="lg" className="group" data-testid="intro-cta">
+              {homeIntro.cta.label}
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
+        </div>
+      </Reveal>
     </Section>
   );
 }
